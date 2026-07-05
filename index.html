@@ -1,1 +1,267 @@
-<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>Voltari Studio - Neonaut</title><meta name='description' content='Voltari Studio, creators of Neonaut - a neon-soaked space arcade dodger for Android.'><link rel='preconnect' href='https://fonts.googleapis.com'><link href='https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Rajdhani:wght@500;600&display=swap' rel='stylesheet'><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:Rajdhani,sans-serif;background:radial-gradient(ellipse at 50% -10%,#1a0b2e 0%,#05060f 55%);color:#dfe7ff;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 24px}.studio{font-family:Orbitron,sans-serif;letter-spacing:.5em;font-size:13px;color:#7fa8d0;margin-bottom:20px;text-transform:uppercase}h1{font-family:Orbitron,sans-serif;font-weight:800;font-size:clamp(52px,13vw,116px);background:linear-gradient(90deg,#3fe0ff,#ff2d9b);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:.04em}.tag{font-size:clamp(16px,3vw,22px);color:#aab8d8;margin:24px auto 36px;max-width:560px;line-height:1.5}.cta{display:inline-block;background:linear-gradient(90deg,#00c6ff,#0072ff);color:#fff;font-family:Orbitron,sans-serif;font-weight:600;font-size:18px;padding:16px 36px;border-radius:14px;text-decoration:none;box-shadow:0 8px 30px rgba(0,114,255,.4)}.feats{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:44px;max-width:660px}.chip{border:1px solid rgba(63,224,255,.3);border-radius:999px;padding:8px 18px;font-size:15px;color:#bfe6ff;background:rgba(63,224,255,.05)}footer{margin-top:56px;font-size:14px;color:#5e6b8c;line-height:1.8}footer a{color:#7fa8d0;text-decoration:none}</style></head><body><div class='studio'>Voltari Studio</div><h1>NEONAUT</h1><p class='tag'>A neon-soaked space arcade dodger. Pilot through endless asteroid fields, survive as long as you can, and climb the global leaderboard.</p><a class='cta' href='https://play.google.com/store/apps/details?id=com.voltari.neonaut'>Get it on Google Play</a><div class='feats'><span class='chip'>Endless arcade action</span><span class='chip'>6 unlockable ships</span><span class='chip'>Global leaderboards</span><span class='chip'>Tilt &amp; touch controls</span></div><footer>&copy; 2026 Voltari Studio<br><a href='mailto:voltari.studio@gmail.com'>voltari.studio@gmail.com</a></footer></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Voltari Studio — Mobile Games</title>
+<meta name="description" content="Voltari Studio is an indie studio crafting fast, replayable mobile games for Android. Makers of Neonaut and Blade & Banner.">
+<meta property="og:title" content="Voltari Studio — Mobile Games">
+<meta property="og:description" content="We craft fast, replayable mobile games for Android. Makers of Neonaut and Blade & Banner.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#07080f; --bg2:#0c0e1a;
+    --ink:#eef1fb; --dim:#9aa3c4; --faint:#5f688a;
+    --line:rgba(255,255,255,.09);
+    --card:rgba(255,255,255,.028);
+    /* game accents */
+    --bb1:#f5c451; --bb2:#3ec98a;      /* Blade & Banner: gold + emerald */
+    --nn1:#3fe0ff; --nn2:#ff2d9b;      /* Neonaut: cyan + magenta */
+    --studio:#8b7bff;                  /* studio violet */
+    --maxw:1120px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:Inter,system-ui,sans-serif;color:var(--ink);
+    background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  /* ambient glows */
+  body::before{
+    content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+    background:
+      radial-gradient(48vw 40vw at 14% -6%, rgba(139,123,255,.16), transparent 60%),
+      radial-gradient(42vw 36vw at 100% 8%, rgba(63,224,255,.10), transparent 60%),
+      radial-gradient(46vw 40vw at 62% 108%, rgba(245,196,81,.08), transparent 60%),
+      linear-gradient(180deg,var(--bg),var(--bg2));
+  }
+  h1,h2,h3,.wm,.brand{font-family:"Space Grotesk",Inter,sans-serif;letter-spacing:-.01em}
+  a{color:inherit}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+  /* nav */
+  header{position:sticky;top:0;z-index:20;backdrop-filter:blur(12px);
+    background:rgba(7,8,15,.6);border-bottom:1px solid var(--line)}
+  nav{display:flex;align-items:center;justify-content:space-between;height:66px}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:700;font-size:16px;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--ink);text-decoration:none}
+  .logo{width:26px;height:26px;border-radius:8px;position:relative;flex:0 0 auto;
+    background:conic-gradient(from 220deg,var(--studio),var(--nn1),var(--bb1),var(--studio));
+    box-shadow:0 0 18px rgba(139,123,255,.45)}
+  .logo::after{content:"";position:absolute;inset:5px;border-radius:4px;background:var(--bg)}
+  .navlinks{display:flex;gap:26px;font-size:14.5px;color:var(--dim);font-weight:500}
+  .navlinks a{text-decoration:none;transition:color .2s}
+  .navlinks a:hover{color:var(--ink)}
+
+  /* hero */
+  .hero{text-align:center;padding:96px 0 40px}
+  .eyebrow{display:inline-block;font-size:12.5px;letter-spacing:.34em;text-transform:uppercase;
+    color:var(--studio);font-weight:600;padding:7px 15px;border:1px solid rgba(139,123,255,.32);
+    border-radius:999px;background:rgba(139,123,255,.06);margin-bottom:26px}
+  .hero h1{font-size:clamp(38px,7vw,74px);font-weight:700;line-height:1.03;
+    background:linear-gradient(180deg,#fff 30%,#b9c0e0);-webkit-background-clip:text;
+    background-clip:text;-webkit-text-fill-color:transparent}
+  .hero p{max-width:600px;margin:22px auto 0;color:var(--dim);font-size:clamp(16px,2.4vw,19px)}
+  .hero .meta{margin-top:30px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+  .pill{font-size:13px;color:var(--dim);border:1px solid var(--line);border-radius:999px;
+    padding:6px 14px;background:var(--card)}
+  .pill b{color:var(--ink);font-weight:600}
+
+  /* section head */
+  .sec{padding:56px 0 30px}
+  .sec-h{display:flex;align-items:baseline;justify-content:space-between;gap:16px;
+    margin-bottom:28px;flex-wrap:wrap}
+  .sec-h h2{font-size:clamp(24px,4vw,34px);font-weight:700}
+  .sec-h span{color:var(--faint);font-size:14px}
+
+  /* game grid */
+  .games{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .game{position:relative;border:1px solid var(--line);border-radius:22px;overflow:hidden;
+    background:var(--card);transition:transform .28s cubic-bezier(.2,.7,.2,1),box-shadow .28s,border-color .28s}
+  .game:hover{transform:translateY(-6px);border-color:rgba(255,255,255,.18)}
+  .game.bb:hover{box-shadow:0 24px 60px -22px rgba(245,196,81,.4)}
+  .game.nn:hover{box-shadow:0 24px 60px -22px rgba(63,224,255,.4)}
+
+  /* game cover */
+  .cover{position:relative;height:210px;display:flex;align-items:center;justify-content:center;
+    overflow:hidden;border-bottom:1px solid var(--line)}
+  .bb .cover{background:
+    radial-gradient(120% 120% at 20% 0%, rgba(245,196,81,.32), transparent 55%),
+    radial-gradient(120% 120% at 100% 100%, rgba(62,201,138,.30), transparent 55%),
+    linear-gradient(160deg,#2a2314,#12160f)}
+  .nn .cover{background:
+    radial-gradient(120% 120% at 15% 0%, rgba(63,224,255,.30), transparent 55%),
+    radial-gradient(120% 120% at 100% 100%, rgba(255,45,155,.30), transparent 55%),
+    linear-gradient(160deg,#141026,#0a0a18)}
+  .cover .wm{position:absolute;font-weight:700;font-size:clamp(40px,7vw,60px);white-space:nowrap;
+    letter-spacing:-.02em;opacity:.9}
+  .bb .wm{background:linear-gradient(90deg,var(--bb1),var(--bb2));-webkit-background-clip:text;
+    background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 4px 20px rgba(245,196,81,.25))}
+  .nn .wm{background:linear-gradient(90deg,var(--nn1),var(--nn2));-webkit-background-clip:text;
+    background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 4px 20px rgba(255,45,155,.25))}
+  .cover .emoji{position:absolute;font-size:74px;opacity:.14;filter:blur(.3px)}
+  .bb .emoji{left:8%;top:14%}
+  .nn .emoji{right:8%;bottom:10%}
+  .badge{position:absolute;top:14px;left:14px;z-index:2;font-size:11px;font-weight:600;
+    letter-spacing:.12em;text-transform:uppercase;padding:5px 11px;border-radius:999px;color:#0b0c12}
+  .bb .badge{background:linear-gradient(90deg,var(--bb1),var(--bb2))}
+  .nn .badge{background:rgba(255,255,255,.9)}
+
+  /* game body */
+  .body{padding:22px 22px 24px}
+  .body h3{font-size:23px;font-weight:700;display:flex;align-items:center;gap:9px}
+  .role{font-size:13px;color:var(--faint);margin:2px 0 12px;font-weight:500}
+  .body p{color:var(--dim);font-size:15px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 20px}
+  .chip{font-size:12.5px;padding:5px 11px;border-radius:8px;color:var(--ink);
+    background:rgba(255,255,255,.05);border:1px solid var(--line)}
+  .bb .chip{box-shadow:inset 0 0 0 1px rgba(245,196,81,.12)}
+  .nn .chip{box-shadow:inset 0 0 0 1px rgba(63,224,255,.12)}
+
+  .cta{display:inline-flex;align-items:center;gap:9px;font-family:"Space Grotesk",sans-serif;
+    font-weight:600;font-size:15px;padding:13px 22px;border-radius:12px;text-decoration:none;
+    transition:transform .2s,box-shadow .2s}
+  .cta.play{color:#04121a;background:linear-gradient(90deg,var(--nn1),#0072ff);
+    box-shadow:0 10px 30px -8px rgba(0,114,255,.6)}
+  .cta.play:hover{transform:translateY(-2px);box-shadow:0 14px 36px -8px rgba(0,114,255,.75)}
+  .cta.soon{color:var(--bb1);background:transparent;border:1px solid rgba(245,196,81,.4);cursor:default}
+  .cta .arrow{transition:transform .2s}
+  .cta.play:hover .arrow{transform:translateX(3px)}
+  .soon-note{font-size:12.5px;color:var(--faint);margin-top:9px}
+
+  /* studio strip */
+  .about{margin-top:26px;border:1px solid var(--line);border-radius:22px;padding:30px 26px;
+    background:var(--card);display:grid;grid-template-columns:1.3fr 1fr;gap:26px;align-items:center}
+  .about h3{font-size:20px;font-weight:700;margin-bottom:8px}
+  .about p{color:var(--dim);font-size:15px}
+  .values{display:flex;flex-direction:column;gap:12px}
+  .value{display:flex;gap:12px;align-items:flex-start;font-size:14px;color:var(--dim)}
+  .value .ic{font-size:18px;line-height:1.4}
+  .value b{color:var(--ink);font-weight:600;display:block}
+
+  footer{margin-top:64px;border-top:1px solid var(--line);padding:34px 0 46px;text-align:center}
+  footer .brand{justify-content:center;margin-bottom:12px}
+  footer p{color:var(--faint);font-size:14px;line-height:1.9}
+  footer a{color:var(--dim);text-decoration:none}
+  footer a:hover{color:var(--ink)}
+
+  @media(max-width:760px){
+    .navlinks{display:none}
+    .hero{padding:64px 0 26px}
+    .games{grid-template-columns:1fr}
+    .about{grid-template-columns:1fr;gap:20px}
+    .cover{height:170px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a class="brand" href="#top"><span class="logo"></span>Voltari Studio</a>
+    <div class="navlinks">
+      <a href="#games">Games</a>
+      <a href="#studio">Studio</a>
+      <a href="mailto:voltari.studio@gmail.com">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero wrap">
+    <span class="eyebrow">Indie Game Studio</span>
+    <h1>Fast, replayable games<br>you hold in one hand.</h1>
+    <p>Voltari Studio builds tight, satisfying mobile games for Android — pick up, play a run, put it down. No fluff, just the fun part.</p>
+    <div class="meta">
+      <span class="pill"><b>2</b> games</span>
+      <span class="pill"><b>Android</b> · Google Play</span>
+      <span class="pill">Made with <b>♥</b></span>
+    </div>
+  </section>
+
+  <section class="sec wrap" id="games">
+    <div class="sec-h">
+      <h2>Our Games</h2>
+      <span>Two worlds, one thumb.</span>
+    </div>
+
+    <div class="games">
+
+      <!-- BLADE & BANNER -->
+      <article class="game bb">
+        <div class="cover">
+          <span class="badge">New</span>
+          <span class="emoji">⚔️</span>
+          <span class="wm">Blade&nbsp;&amp;&nbsp;Banner</span>
+        </div>
+        <div class="body">
+          <h3>Blade &amp; Banner</h3>
+          <div class="role">Auto-battle roguelite · Fantasy</div>
+          <p>Command a hero, raise a war party, and carve through relentless waves of fantasy foes. Loot, forge, and grow stronger with every run.</p>
+          <div class="chips">
+            <span class="chip">⚔️ Auto-battle</span>
+            <span class="chip">🛡️ 5 hero classes</span>
+            <span class="chip">🤝 War party allies</span>
+            <span class="chip">💎 Loot &amp; forge</span>
+            <span class="chip">🌑 Campaign + Endless</span>
+            <span class="chip">📴 Play offline</span>
+            <span class="chip">🌍 EN / TR</span>
+          </div>
+          <!-- When Blade & Banner is live on Play, swap this block for the .cta.play link below -->
+          <span class="cta soon">Coming soon to Google Play</span>
+          <div class="soon-note">Now in testing — launching on Android shortly.</div>
+        </div>
+      </article>
+
+      <!-- NEONAUT -->
+      <article class="game nn">
+        <div class="cover">
+          <span class="badge">Live</span>
+          <span class="emoji">🚀</span>
+          <span class="wm">NEONAUT</span>
+        </div>
+        <div class="body">
+          <h3>Neonaut</h3>
+          <div class="role">Arcade dodger · Neon space</div>
+          <p>A neon-soaked space arcade dodger. Pilot through endless asteroid fields, survive as long as you can, and climb the global leaderboard.</p>
+          <div class="chips">
+            <span class="chip">✨ Endless arcade action</span>
+            <span class="chip">🚀 6 unlockable ships</span>
+            <span class="chip">🏆 Global leaderboards</span>
+            <span class="chip">🎮 Tilt &amp; touch controls</span>
+          </div>
+          <a class="cta play" href="https://play.google.com/store/apps/details?id=com.voltari.neonaut" target="_blank" rel="noopener">Get it on Google Play <span class="arrow">→</span></a>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- studio strip -->
+    <div class="about" id="studio">
+      <div>
+        <h3>About Voltari Studio</h3>
+        <p>We're a small independent studio with a simple goal: make mobile games that respect your time and pull you back for one more run. Every title is built to be quick to learn, hard to put down, and playable anywhere.</p>
+      </div>
+      <div class="values">
+        <div class="value"><span class="ic">⚡</span><span><b>Pick-up-and-play</b>Designed for short, satisfying sessions.</span></div>
+        <div class="value"><span class="ic">🔁</span><span><b>Built to replay</b>Runs, unlocks, and just-one-more hooks.</span></div>
+        <div class="value"><span class="ic">📱</span><span><b>Android first</b>Lightweight, offline-friendly, no account needed.</span></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <a class="brand" href="#top"><span class="logo"></span>Voltari Studio</a>
+  <p>
+    © 2026 Voltari Studio · Independent mobile games<br>
+    <a href="mailto:voltari.studio@gmail.com">voltari.studio@gmail.com</a>
+  </p>
+</footer>
+
+</body>
+</html>
