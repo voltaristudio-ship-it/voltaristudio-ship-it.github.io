@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Voltari Studio — Mobile Games</title>
-<meta name="description" content="Voltari Studio is an indie studio crafting fast, replayable mobile games for Android. Makers of Neonaut and Blade & Banner.">
-<meta property="og:title" content="Voltari Studio — Mobile Games">
-<meta property="og:description" content="We craft fast, replayable mobile games for Android. Makers of Neonaut and Blade & Banner.">
+<title>Voltari Studio — Games</title>
+<meta name="description" content="Voltari Studio is an indie studio crafting fast, replayable games for PC and mobile. Makers of Lane Wars, Neonaut and Blade & Banner.">
+<meta property="og:title" content="Voltari Studio — Games">
+<meta property="og:description" content="We craft fast, replayable games for PC and mobile. Makers of Lane Wars, Neonaut and Blade & Banner.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,6 +20,8 @@
     /* game accents */
     --bb1:#f5c451; --bb2:#3ec98a;      /* Blade & Banner: gold + emerald */
     --nn1:#3fe0ff; --nn2:#ff2d9b;      /* Neonaut: cyan + magenta */
+    --lw1:#5aa0ff; --lw2:#ff5470;      /* Lane Wars: blue kingdom + red legion */
+    --lwg:#f5c451;                     /* Lane Wars gold wordmark */
     --studio:#8b7bff;                  /* studio violet */
     --maxw:1120px;
   }
@@ -65,7 +67,7 @@
   .hero h1{font-size:clamp(38px,7vw,74px);font-weight:700;line-height:1.03;
     background:linear-gradient(180deg,#fff 30%,#b9c0e0);-webkit-background-clip:text;
     background-clip:text;-webkit-text-fill-color:transparent}
-  .hero p{max-width:600px;margin:22px auto 0;color:var(--dim);font-size:clamp(16px,2.4vw,19px)}
+  .hero p{max-width:620px;margin:22px auto 0;color:var(--dim);font-size:clamp(16px,2.4vw,19px)}
   .hero .meta{margin-top:30px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
   .pill{font-size:13px;color:var(--dim);border:1px solid var(--line);border-radius:999px;
     padding:6px 14px;background:var(--card)}
@@ -85,6 +87,13 @@
   .game:hover{transform:translateY(-6px);border-color:rgba(255,255,255,.18)}
   .game.bb:hover{box-shadow:0 24px 60px -22px rgba(245,196,81,.4)}
   .game.nn:hover{box-shadow:0 24px 60px -22px rgba(63,224,255,.4)}
+  .game.lw:hover{box-shadow:0 26px 66px -22px rgba(90,140,255,.42)}
+
+  /* featured (flagship) card — full width, art beside copy */
+  .game.featured{grid-column:1/-1;display:grid;grid-template-columns:1.08fr .92fr}
+  .game.featured .cover{height:100%;min-height:320px;border-bottom:none;border-right:1px solid var(--line)}
+  .game.featured .body{padding:34px 34px 34px}
+  .game.featured .body h3{font-size:27px}
 
   /* game cover */
   .cover{position:relative;height:210px;display:flex;align-items:center;justify-content:center;
@@ -97,19 +106,30 @@
     radial-gradient(120% 120% at 15% 0%, rgba(63,224,255,.30), transparent 55%),
     radial-gradient(120% 120% at 100% 100%, rgba(255,45,155,.30), transparent 55%),
     linear-gradient(160deg,#141026,#0a0a18)}
+  .lw .cover{background:
+    radial-gradient(120% 130% at 8% 0%, rgba(90,160,255,.34), transparent 55%),
+    radial-gradient(120% 130% at 100% 100%, rgba(255,84,112,.32), transparent 55%),
+    linear-gradient(150deg,#0f1a30,#1c1016)}
   .cover .wm{position:absolute;font-weight:700;font-size:clamp(40px,7vw,60px);white-space:nowrap;
     letter-spacing:-.02em;opacity:.9}
+  .featured .cover .wm{font-size:clamp(44px,6vw,66px)}
   .bb .wm{background:linear-gradient(90deg,var(--bb1),var(--bb2));-webkit-background-clip:text;
     background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 4px 20px rgba(245,196,81,.25))}
   .nn .wm{background:linear-gradient(90deg,var(--nn1),var(--nn2));-webkit-background-clip:text;
     background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 4px 20px rgba(255,45,155,.25))}
+  .lw .wm{background:linear-gradient(90deg,var(--lwg),#ffe6a3 52%,var(--lwg));-webkit-background-clip:text;
+    background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 4px 22px rgba(245,196,81,.3))}
   .cover .emoji{position:absolute;font-size:74px;opacity:.14;filter:blur(.3px)}
+  .featured .cover .emoji{font-size:120px;opacity:.13}
   .bb .emoji{left:8%;top:14%}
   .nn .emoji{right:8%;bottom:10%}
+  .lw .emoji{right:7%;bottom:8%}
+  .lw .emoji.e2{left:7%;top:12%;right:auto;bottom:auto;font-size:88px}
   .badge{position:absolute;top:14px;left:14px;z-index:2;font-size:11px;font-weight:600;
     letter-spacing:.12em;text-transform:uppercase;padding:5px 11px;border-radius:999px;color:#0b0c12}
   .bb .badge{background:linear-gradient(90deg,var(--bb1),var(--bb2))}
   .nn .badge{background:rgba(255,255,255,.9)}
+  .lw .badge{background:linear-gradient(90deg,var(--lw1),var(--lw2));color:#fff}
 
   /* game body */
   .body{padding:22px 22px 24px}
@@ -121,6 +141,7 @@
     background:rgba(255,255,255,.05);border:1px solid var(--line)}
   .bb .chip{box-shadow:inset 0 0 0 1px rgba(245,196,81,.12)}
   .nn .chip{box-shadow:inset 0 0 0 1px rgba(63,224,255,.12)}
+  .lw .chip{box-shadow:inset 0 0 0 1px rgba(120,160,255,.14)}
 
   .cta{display:inline-flex;align-items:center;gap:9px;font-family:"Space Grotesk",sans-serif;
     font-weight:600;font-size:15px;padding:13px 22px;border-radius:12px;text-decoration:none;
@@ -129,6 +150,7 @@
     box-shadow:0 10px 30px -8px rgba(0,114,255,.6)}
   .cta.play:hover{transform:translateY(-2px);box-shadow:0 14px 36px -8px rgba(0,114,255,.75)}
   .cta.soon{color:var(--bb1);background:transparent;border:1px solid rgba(245,196,81,.4);cursor:default}
+  .cta.soon.lw-soon{color:#8fb8ff;border-color:rgba(120,160,255,.45)}
   .cta .arrow{transition:transform .2s}
   .cta.play:hover .arrow{transform:translateX(3px)}
   .soon-note{font-size:12.5px;color:var(--faint);margin-top:9px}
@@ -153,6 +175,8 @@
     .navlinks{display:none}
     .hero{padding:64px 0 26px}
     .games{grid-template-columns:1fr}
+    .game.featured{grid-template-columns:1fr}
+    .game.featured .cover{min-height:190px;border-right:none;border-bottom:1px solid var(--line)}
     .about{grid-template-columns:1fr;gap:20px}
     .cover{height:170px}
   }
@@ -174,22 +198,49 @@
 <main id="top">
   <section class="hero wrap">
     <span class="eyebrow">Indie Game Studio</span>
-    <h1>Fast, replayable games<br>you hold in one hand.</h1>
-    <p>Voltari Studio builds tight, satisfying mobile games for Android — pick up, play a run, put it down. No fluff, just the fun part.</p>
+    <h1>Fast, replayable games<br>for PC &amp; mobile.</h1>
+    <p>Voltari Studio builds tight, satisfying games — from one-hand mobile runs to a full 3D PC arena. No fluff, just the fun part.</p>
     <div class="meta">
-      <span class="pill"><b>2</b> games</span>
+      <span class="pill"><b>3</b> games</span>
+      <span class="pill"><b>PC</b> · Steam</span>
       <span class="pill"><b>Android</b> · Google Play</span>
-      <span class="pill">Made with <b>♥</b></span>
     </div>
   </section>
 
   <section class="sec wrap" id="games">
     <div class="sec-h">
       <h2>Our Games</h2>
-      <span>Two worlds, one thumb.</span>
+      <span>Three titles across PC &amp; mobile.</span>
     </div>
 
     <div class="games">
+
+      <!-- LANE WARS — flagship PC title (featured, full width) -->
+      <article class="game lw featured">
+        <div class="cover">
+          <span class="badge">PC · Steam</span>
+          <span class="emoji e2">🏰</span>
+          <span class="emoji">⚔️</span>
+          <span class="wm">LANE&nbsp;WARS</span>
+        </div>
+        <div class="body">
+          <h3>Lane Wars</h3>
+          <div class="role">Lane strategy auto-battler · PC / Steam</div>
+          <p>Command your legion in a dark-fantasy lane auto-battler. Raise free-producing barracks, summon 10 unique heroes, gear them up, and smash the enemy base across two lanes. Pure strategy — no unit micro. Outwit the AI.</p>
+          <div class="chips">
+            <span class="chip">🏰 Two lanes, one goal</span>
+            <span class="chip">🦸 10 unique heroes</span>
+            <span class="chip">💎 24 items · 4 tiers</span>
+            <span class="chip">🔥 Mega creeps</span>
+            <span class="chip">🤖 Human-like AI · 4 levels</span>
+            <span class="chip">🖥️ PC / Steam</span>
+            <span class="chip">🎁 Free to play</span>
+          </div>
+          <!-- When the Steam page is public, swap this for a "Wishlist on Steam" .cta link -->
+          <span class="cta soon lw-soon">Coming soon on Steam</span>
+          <div class="soon-note">Store page in review — a free Playtest is on the way.</div>
+        </div>
+      </article>
 
       <!-- BLADE & BANNER -->
       <article class="game bb">
@@ -244,12 +295,12 @@
     <div class="about" id="studio">
       <div>
         <h3>About Voltari Studio</h3>
-        <p>We're a small independent studio with a simple goal: make mobile games that respect your time and pull you back for one more run. Every title is built to be quick to learn, hard to put down, and playable anywhere.</p>
+        <p>We're a small independent studio with a simple goal: make games that respect your time and pull you back for one more run — whether that's a quick mobile session or a full PC battle. Every title is built to be quick to learn and hard to put down.</p>
       </div>
       <div class="values">
-        <div class="value"><span class="ic">⚡</span><span><b>Pick-up-and-play</b>Designed for short, satisfying sessions.</span></div>
+        <div class="value"><span class="ic">⚡</span><span><b>Pick-up-and-play</b>Easy to learn, made for satisfying sessions.</span></div>
         <div class="value"><span class="ic">🔁</span><span><b>Built to replay</b>Runs, unlocks, and just-one-more hooks.</span></div>
-        <div class="value"><span class="ic">📱</span><span><b>Android first</b>Lightweight, offline-friendly, no account needed.</span></div>
+        <div class="value"><span class="ic">🎮</span><span><b>Mobile &amp; PC</b>From Android to Steam — lightweight and player-first.</span></div>
       </div>
     </div>
   </section>
@@ -258,7 +309,7 @@
 <footer>
   <a class="brand" href="#top"><span class="logo"></span>Voltari Studio</a>
   <p>
-    © 2026 Voltari Studio · Independent mobile games<br>
+    © 2026 Voltari Studio · Independent game studio<br>
     <a href="mailto:voltari.studio@gmail.com">voltari.studio@gmail.com</a>
   </p>
 </footer>
