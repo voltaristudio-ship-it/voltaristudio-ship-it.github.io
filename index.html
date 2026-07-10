@@ -3,182 +3,199 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Voltari Studio — Games</title>
-<meta name="description" content="Voltari Studio is an indie studio crafting fast, replayable games for PC and mobile. Makers of Lane Wars, Neonaut and Blade & Banner.">
-<meta property="og:title" content="Voltari Studio — Games">
-<meta property="og:description" content="We craft fast, replayable games for PC and mobile. Makers of Lane Wars, Neonaut and Blade & Banner.">
+<title>Voltari Studio — Epic Games</title>
+<meta name="description" content="Voltari Studio is an independent game studio crafting immersive, strategic games with deep mechanics. Makers of Lane Wars, Neonaut and Blade & Banner.">
+<meta property="og:title" content="Voltari Studio — Epic Games">
+<meta property="og:description" content="We create epic worlds and unforgettable battles. Makers of Lane Wars, Neonaut and Blade & Banner.">
 <meta property="og:type" content="website">
+<meta property="og:image" content="img/hero.jpg">
+<link rel="icon" href="img/v-mark.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#07080f; --bg2:#0c0e1a;
-    --ink:#eef1fb; --dim:#9aa3c4; --faint:#5f688a;
-    --line:rgba(255,255,255,.09);
-    --card:rgba(255,255,255,.028);
-    /* game accents */
-    --bb1:#f5c451; --bb2:#3ec98a;      /* Blade & Banner: gold + emerald */
-    --nn1:#3fe0ff; --nn2:#ff2d9b;      /* Neonaut: cyan + magenta */
-    --lw1:#5aa0ff; --lw2:#ff5470;      /* Lane Wars: blue kingdom + red legion */
-    --lwg:#f5c451;                     /* Lane Wars gold wordmark */
-    --studio:#8b7bff;                  /* studio violet */
-    --maxw:1120px;
+    --bg:#09090c; --bg2:#0c0c10; --panel:#101014; --panel2:#0d0d11;
+    --ink:#ece7dd; --dim:#a8a299; --faint:#6f6a60;
+    --gold:#e2b552; --gold-lt:#f5df9b; --gold-dk:#a97e2c;
+    --line:rgba(226,181,82,.16); --line2:rgba(255,255,255,.06);
+    --maxw:1180px;
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{
-    font-family:Inter,system-ui,sans-serif;color:var(--ink);
-    background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
-  }
-  /* ambient glows */
-  body::before{
-    content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--bg);
+    line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
     background:
-      radial-gradient(48vw 40vw at 14% -6%, rgba(139,123,255,.16), transparent 60%),
-      radial-gradient(42vw 36vw at 100% 8%, rgba(63,224,255,.10), transparent 60%),
-      radial-gradient(46vw 40vw at 62% 108%, rgba(245,196,81,.08), transparent 60%),
-      linear-gradient(180deg,var(--bg),var(--bg2));
-  }
-  h1,h2,h3,.wm,.brand{font-family:"Space Grotesk",Inter,sans-serif;letter-spacing:-.01em}
-  a{color:inherit}
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+      radial-gradient(50vw 40vw at 12% 8%, rgba(226,181,82,.06), transparent 60%),
+      radial-gradient(46vw 38vw at 92% 84%, rgba(226,181,82,.05), transparent 60%),
+      linear-gradient(180deg,var(--bg),var(--bg2))}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px}
+  h1,h2,h3,.serif{font-family:"Cormorant Garamond",Georgia,serif}
+  .cinzel{font-family:"Cinzel",serif}
 
-  /* nav */
-  header{position:sticky;top:0;z-index:20;backdrop-filter:blur(12px);
-    background:rgba(7,8,15,.6);border-bottom:1px solid var(--line)}
-  nav{display:flex;align-items:center;justify-content:space-between;height:66px}
-  .brand{display:flex;align-items:center;gap:11px;font-weight:700;font-size:16px;
-    letter-spacing:.16em;text-transform:uppercase;color:var(--ink);text-decoration:none}
-  .logo{width:26px;height:26px;border-radius:8px;position:relative;flex:0 0 auto;
-    background:conic-gradient(from 220deg,var(--studio),var(--nn1),var(--bb1),var(--studio));
-    box-shadow:0 0 18px rgba(139,123,255,.45)}
-  .logo::after{content:"";position:absolute;inset:5px;border-radius:4px;background:var(--bg)}
-  .navlinks{display:flex;gap:26px;font-size:14.5px;color:var(--dim);font-weight:500}
-  .navlinks a{text-decoration:none;transition:color .2s}
-  .navlinks a:hover{color:var(--ink)}
+  /* ornaments + eyebrows */
+  .eyebrow{font-family:"Cinzel",serif;font-size:12px;letter-spacing:.42em;text-transform:uppercase;
+    color:var(--gold);font-weight:600}
+  .orn{display:flex;align-items:center;justify-content:center;gap:14px;margin:16px 0}
+  .orn::before,.orn::after{content:"";height:1px;width:64px;
+    background:linear-gradient(90deg,transparent,var(--gold-dk))}
+  .orn::after{background:linear-gradient(90deg,var(--gold-dk),transparent)}
+  .orn span{color:var(--gold);font-size:12px;transform:rotate(45deg);opacity:.9}
+
+  /* buttons */
+  .btn{display:inline-flex;align-items:center;gap:10px;font-family:"Cinzel",serif;font-weight:600;
+    font-size:13px;letter-spacing:.12em;text-transform:uppercase;padding:14px 26px;border-radius:4px;
+    cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s,color .2s;border:1px solid transparent}
+  .btn .ar{transition:transform .2s}
+  .btn:hover .ar{transform:translateX(4px)}
+  .btn-gold{background:linear-gradient(180deg,var(--gold-lt),var(--gold));color:#241a06;
+    box-shadow:0 10px 30px -10px rgba(226,181,82,.5)}
+  .btn-gold:hover{transform:translateY(-2px);box-shadow:0 16px 40px -10px rgba(226,181,82,.7)}
+  .btn-ghost{background:transparent;border-color:var(--gold-dk);color:var(--gold)}
+  .btn-ghost:hover{background:rgba(226,181,82,.08);border-color:var(--gold)}
+  .btn.dis{opacity:.55;cursor:default;box-shadow:none}
+  .btn.dis:hover{transform:none}
+
+  /* header */
+  header{position:sticky;top:0;z-index:40;background:rgba(9,9,12,.78);backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line)}
+  nav{display:flex;align-items:center;justify-content:space-between;height:74px;gap:20px}
+  .brand{display:flex;align-items:center;gap:12px}
+  .brand img{height:34px;width:auto;filter:drop-shadow(0 2px 6px rgba(226,181,82,.35))}
+  .brand .bt{font-family:"Cinzel",serif;font-weight:700;font-size:16px;letter-spacing:.22em;color:var(--ink)}
+  .brand .bt b{color:var(--gold);font-weight:700}
+  .navlinks{display:flex;gap:32px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;
+    font-weight:500;color:var(--dim)}
+  .navlinks a{position:relative;padding:4px 0;transition:color .2s}
+  .navlinks a:hover,.navlinks a.on{color:var(--gold)}
+  .navlinks a.on::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;
+    background:linear-gradient(90deg,var(--gold),transparent)}
+  .navcta{white-space:nowrap;padding:11px 20px;font-size:12px}
+  .burger{display:none}
 
   /* hero */
-  .hero{text-align:center;padding:96px 0 40px}
-  .eyebrow{display:inline-block;font-size:12.5px;letter-spacing:.34em;text-transform:uppercase;
-    color:var(--studio);font-weight:600;padding:7px 15px;border:1px solid rgba(139,123,255,.32);
-    border-radius:999px;background:rgba(139,123,255,.06);margin-bottom:26px}
-  .hero h1{font-size:clamp(38px,7vw,74px);font-weight:700;line-height:1.03;
-    background:linear-gradient(180deg,#fff 30%,#b9c0e0);-webkit-background-clip:text;
-    background-clip:text;-webkit-text-fill-color:transparent}
-  .hero p{max-width:620px;margin:22px auto 0;color:var(--dim);font-size:clamp(16px,2.4vw,19px)}
-  .hero .meta{margin-top:30px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
-  .pill{font-size:13px;color:var(--dim);border:1px solid var(--line);border-radius:999px;
-    padding:6px 14px;background:var(--card)}
-  .pill b{color:var(--ink);font-weight:600}
+  .hero{position:relative;min-height:640px;display:flex;align-items:center;justify-content:center;
+    text-align:center;overflow:hidden;border-bottom:1px solid var(--line)}
+  .hero .bg{position:absolute;inset:0;background-image:url("img/hero.jpg");background-size:cover;
+    background-position:center 38%}
+  .hero::after{content:"";position:absolute;inset:0;
+    background:
+      radial-gradient(58% 52% at 50% 50%, rgba(7,7,10,.58), transparent 72%),
+      radial-gradient(120% 92% at 50% 44%, transparent 40%, rgba(9,9,12,.5) 76%, rgba(9,9,12,.95) 100%),
+      linear-gradient(180deg, rgba(9,9,12,.42), rgba(9,9,12,.12) 38%, rgba(9,9,12,.88))}
+  .hero .inner{position:relative;z-index:2;padding:72px 24px}
+  .hero .vmark{height:112px;width:auto;margin:0 auto 18px;
+    filter:drop-shadow(0 6px 26px rgba(226,181,82,.5))}
+  .hero .vname{font-family:"Cinzel",serif;font-weight:700;font-size:clamp(38px,7vw,68px);
+    letter-spacing:.14em;color:#fff;line-height:1;text-shadow:0 4px 30px rgba(0,0,0,.6)}
+  .hero .vsub{display:flex;align-items:center;justify-content:center;gap:16px;margin:12px 0 6px}
+  .hero .vsub span{font-family:"Cinzel",serif;font-weight:600;font-size:clamp(15px,2.4vw,20px);
+    letter-spacing:.55em;color:var(--gold);padding-left:.55em}
+  .hero .vsub::before,.hero .vsub::after{content:"";height:1px;width:clamp(30px,7vw,70px);
+    background:linear-gradient(90deg,transparent,var(--gold))}
+  .hero .vsub::after{background:linear-gradient(90deg,var(--gold),transparent)}
+  .hero .tag{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:clamp(22px,3.6vw,32px);
+    color:#e9e4da;margin-top:16px}
+  .hero .tag b{color:var(--gold);font-weight:700}
+  .hero .btn{margin-top:8px}
 
-  /* section head */
-  .sec{padding:56px 0 30px}
-  .sec-h{display:flex;align-items:baseline;justify-content:space-between;gap:16px;
-    margin-bottom:28px;flex-wrap:wrap}
-  .sec-h h2{font-size:clamp(24px,4vw,34px);font-weight:700}
-  .sec-h span{color:var(--faint);font-size:14px}
+  /* section base */
+  section{padding:88px 0}
+  .sec-head{text-align:center;margin-bottom:52px}
+  .sec-head h2{font-size:clamp(30px,5vw,46px);font-weight:600;margin-top:12px;color:var(--ink)}
 
-  /* game grid */
-  .games{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-  .game{position:relative;border:1px solid var(--line);border-radius:22px;overflow:hidden;
-    background:var(--card);transition:transform .28s cubic-bezier(.2,.7,.2,1),box-shadow .28s,border-color .28s}
-  .game:hover{transform:translateY(-6px);border-color:rgba(255,255,255,.18)}
-  .game.bb:hover{box-shadow:0 24px 60px -22px rgba(245,196,81,.4)}
-  .game.nn:hover{box-shadow:0 24px 60px -22px rgba(63,224,255,.4)}
-  .game.lw:hover{box-shadow:0 26px 66px -22px rgba(90,140,255,.42)}
+  /* about */
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .about-l h2{font-size:clamp(30px,4.4vw,44px);font-weight:600;line-height:1.08;margin:14px 0 20px}
+  .about-l p{color:var(--dim);font-size:15.5px;max-width:440px;margin-bottom:26px}
+  .about-r{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;
+    border-left:1px solid var(--line);padding-left:52px}
+  .stat{text-align:center}
+  .stat .ic{width:66px;height:66px;margin:0 auto 14px;border-radius:50%;display:flex;align-items:center;
+    justify-content:center;border:1px solid var(--line);background:rgba(226,181,82,.05)}
+  .stat .ic svg{width:30px;height:30px;stroke:var(--gold);fill:none;stroke-width:1.6}
+  .stat .lb{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);
+    line-height:1.4;font-weight:500;min-height:2.8em}
+  .stat .nm{font-family:"Cormorant Garamond",serif;font-weight:700;font-size:38px;color:var(--gold);margin-top:6px}
 
-  /* featured (flagship) card — full width, art beside copy */
-  .game.featured{grid-column:1/-1;display:grid;grid-template-columns:1.08fr .92fr}
-  .game.featured .cover{height:100%;min-height:320px;border-bottom:none;border-right:1px solid var(--line)}
-  .game.featured .body{padding:34px 34px 34px}
-  .game.featured .body h3{font-size:27px}
+  /* games carousel */
+  .games{background:linear-gradient(180deg,transparent,rgba(226,181,82,.02),transparent)}
+  .carousel{position:relative}
+  .track{overflow:hidden;border:1px solid var(--line);border-radius:16px;background:var(--panel)}
+  .slide{display:none;grid-template-columns:1.05fr .95fr}
+  .slide.on{display:grid;animation:fade .5s ease}
+  @keyframes fade{from{opacity:.3}to{opacity:1}}
+  .slide .art{position:relative;min-height:400px;overflow:hidden;border-right:1px solid var(--line)}
+  .slide .art img{width:100%;height:100%;object-fit:cover}
+  .slide .art::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(90deg,transparent 60%,var(--panel))}
+  .slide .info{padding:44px 44px;display:flex;flex-direction:column;justify-content:center}
+  .gbadge{align-self:flex-start;font-family:"Cinzel",serif;font-size:10.5px;letter-spacing:.16em;
+    text-transform:uppercase;font-weight:600;color:var(--gold);border:1px solid var(--gold-dk);
+    background:rgba(226,181,82,.08);padding:5px 12px;border-radius:3px;margin-bottom:16px}
+  .slide .info h3{font-family:"Cormorant Garamond",serif;font-weight:700;font-size:40px;line-height:1;color:var(--ink)}
+  .slide .genre{color:var(--gold);font-size:14px;letter-spacing:.03em;margin:8px 0 16px;
+    border-bottom:1px solid var(--line);padding-bottom:16px}
+  .slide .info p{color:var(--dim);font-size:15px;margin-bottom:26px;max-width:420px}
+  .arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:44px;height:44px;
+    border-radius:50%;border:1px solid var(--line);background:rgba(9,9,12,.7);color:var(--gold);
+    display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:18px;
+    transition:background .2s,border-color .2s,transform .2s}
+  .arrow:hover{background:rgba(226,181,82,.12);border-color:var(--gold)}
+  .arrow.prev{left:-22px}.arrow.next{right:-22px}
+  .dots{display:flex;gap:10px;justify-content:center;margin-top:26px}
+  .dot{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.16);cursor:pointer;transition:.2s}
+  .dot.on{background:var(--gold);box-shadow:0 0 10px rgba(226,181,82,.6)}
 
-  /* game cover */
-  .cover{position:relative;height:210px;display:flex;align-items:center;justify-content:center;
-    overflow:hidden;border-bottom:1px solid var(--line)}
-  .bb .cover{background:
-    radial-gradient(120% 120% at 20% 0%, rgba(245,196,81,.32), transparent 55%),
-    radial-gradient(120% 120% at 100% 100%, rgba(62,201,138,.30), transparent 55%),
-    linear-gradient(160deg,#2a2314,#12160f)}
-  .nn .cover{background:
-    radial-gradient(120% 120% at 15% 0%, rgba(63,224,255,.30), transparent 55%),
-    radial-gradient(120% 120% at 100% 100%, rgba(255,45,155,.30), transparent 55%),
-    linear-gradient(160deg,#141026,#0a0a18)}
-  .lw .cover{background:
-    radial-gradient(120% 130% at 8% 0%, rgba(90,160,255,.34), transparent 55%),
-    radial-gradient(120% 130% at 100% 100%, rgba(255,84,112,.32), transparent 55%),
-    linear-gradient(150deg,#0f1a30,#1c1016)}
-  .cover .wm{position:absolute;font-weight:700;font-size:clamp(40px,7vw,60px);white-space:nowrap;
-    letter-spacing:-.02em;opacity:.9}
-  .featured .cover .wm{font-size:clamp(44px,6vw,66px)}
-  .bb .wm{background:linear-gradient(90deg,var(--bb1),var(--bb2));-webkit-background-clip:text;
-    background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 4px 20px rgba(245,196,81,.25))}
-  .nn .wm{background:linear-gradient(90deg,var(--nn1),var(--nn2));-webkit-background-clip:text;
-    background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 4px 20px rgba(255,45,155,.25))}
-  .lw .wm{background:linear-gradient(90deg,var(--lwg),#ffe6a3 52%,var(--lwg));-webkit-background-clip:text;
-    background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 4px 22px rgba(245,196,81,.3))}
-  .cover .emoji{position:absolute;font-size:74px;opacity:.14;filter:blur(.3px)}
-  .featured .cover .emoji{font-size:120px;opacity:.13}
-  .bb .emoji{left:8%;top:14%}
-  .nn .emoji{right:8%;bottom:10%}
-  .lw .emoji{right:7%;bottom:8%}
-  .lw .emoji.e2{left:7%;top:12%;right:auto;bottom:auto;font-size:88px}
-  .badge{position:absolute;top:14px;left:14px;z-index:2;font-size:11px;font-weight:600;
-    letter-spacing:.12em;text-transform:uppercase;padding:5px 11px;border-radius:999px;color:#0b0c12}
-  .bb .badge{background:linear-gradient(90deg,var(--bb1),var(--bb2))}
-  .nn .badge{background:rgba(255,255,255,.9)}
-  .lw .badge{background:linear-gradient(90deg,var(--lw1),var(--lw2));color:#fff}
+  /* newsletter */
+  .news{border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    background:var(--panel2);padding:40px 0}
+  .news-in{display:flex;align-items:center;gap:26px;flex-wrap:wrap;justify-content:space-between}
+  .news-l{display:flex;align-items:center;gap:16px}
+  .news-l .ic{width:54px;height:54px;flex:0 0 auto;border-radius:50%;border:1px solid var(--line);
+    background:rgba(226,181,82,.06);display:flex;align-items:center;justify-content:center}
+  .news-l .ic svg{width:24px;height:24px;stroke:var(--gold);fill:none;stroke-width:1.6}
+  .news-l p{font-size:15px;color:var(--ink);max-width:340px}
+  .news-form{display:flex;gap:0;border:1px solid var(--line);border-radius:5px;overflow:hidden;background:#0a0a0d}
+  .news-form input{background:transparent;border:0;outline:0;color:var(--ink);padding:14px 18px;
+    font-size:14px;width:min(300px,60vw)}
+  .news-form input::placeholder{color:var(--faint)}
+  .news-form button{border:0;cursor:pointer;font-family:"Cinzel",serif;font-weight:600;font-size:12px;
+    letter-spacing:.12em;text-transform:uppercase;padding:0 24px;color:#241a06;
+    background:linear-gradient(180deg,var(--gold-lt),var(--gold))}
 
-  /* game body */
-  .body{padding:22px 22px 24px}
-  .body h3{font-size:23px;font-weight:700;display:flex;align-items:center;gap:9px}
-  .role{font-size:13px;color:var(--faint);margin:2px 0 12px;font-weight:500}
-  .body p{color:var(--dim);font-size:15px}
-  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 20px}
-  .chip{font-size:12.5px;padding:5px 11px;border-radius:8px;color:var(--ink);
-    background:rgba(255,255,255,.05);border:1px solid var(--line)}
-  .bb .chip{box-shadow:inset 0 0 0 1px rgba(245,196,81,.12)}
-  .nn .chip{box-shadow:inset 0 0 0 1px rgba(63,224,255,.12)}
-  .lw .chip{box-shadow:inset 0 0 0 1px rgba(120,160,255,.14)}
+  /* footer */
+  footer{padding:56px 0 40px}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:36px;padding-bottom:34px;
+    border-bottom:1px solid var(--line2)}
+  .foot-brand img{height:40px;margin-bottom:14px;filter:drop-shadow(0 2px 6px rgba(226,181,82,.35))}
+  .foot-brand .bt{font-family:"Cinzel",serif;font-weight:700;letter-spacing:.2em;font-size:15px}
+  .foot-brand .bt b{color:var(--gold)}
+  .foot-col h4{font-family:"Cinzel",serif;font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--gold);margin-bottom:16px;font-weight:600}
+  .foot-col a,.foot-col p{display:block;color:var(--dim);font-size:14px;margin-bottom:10px;transition:color .2s}
+  .foot-col a:hover{color:var(--gold)}
+  .socials{display:flex;gap:12px}
+  .socials a{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);display:flex;
+    align-items:center;justify-content:center;color:var(--dim);transition:.2s}
+  .socials a:hover{color:var(--gold);border-color:var(--gold);background:rgba(226,181,82,.08)}
+  .socials svg{width:17px;height:17px;fill:currentColor}
+  .copy{text-align:center;color:var(--faint);font-size:13px;padding-top:26px;line-height:1.8}
 
-  .cta{display:inline-flex;align-items:center;gap:9px;font-family:"Space Grotesk",sans-serif;
-    font-weight:600;font-size:15px;padding:13px 22px;border-radius:12px;text-decoration:none;
-    transition:transform .2s,box-shadow .2s}
-  .cta.play{color:#04121a;background:linear-gradient(90deg,var(--nn1),#0072ff);
-    box-shadow:0 10px 30px -8px rgba(0,114,255,.6)}
-  .cta.play:hover{transform:translateY(-2px);box-shadow:0 14px 36px -8px rgba(0,114,255,.75)}
-  .cta.soon{color:var(--bb1);background:transparent;border:1px solid rgba(245,196,81,.4);cursor:default}
-  .cta.soon.lw-soon{color:#8fb8ff;border-color:rgba(120,160,255,.45)}
-  .cta .arrow{transition:transform .2s}
-  .cta.play:hover .arrow{transform:translateX(3px)}
-  .soon-note{font-size:12.5px;color:var(--faint);margin-top:9px}
-
-  /* studio strip */
-  .about{margin-top:26px;border:1px solid var(--line);border-radius:22px;padding:30px 26px;
-    background:var(--card);display:grid;grid-template-columns:1.3fr 1fr;gap:26px;align-items:center}
-  .about h3{font-size:20px;font-weight:700;margin-bottom:8px}
-  .about p{color:var(--dim);font-size:15px}
-  .values{display:flex;flex-direction:column;gap:12px}
-  .value{display:flex;gap:12px;align-items:flex-start;font-size:14px;color:var(--dim)}
-  .value .ic{font-size:18px;line-height:1.4}
-  .value b{color:var(--ink);font-weight:600;display:block}
-
-  footer{margin-top:64px;border-top:1px solid var(--line);padding:34px 0 46px;text-align:center}
-  footer .brand{justify-content:center;margin-bottom:12px}
-  footer p{color:var(--faint);font-size:14px;line-height:1.9}
-  footer a{color:var(--dim);text-decoration:none}
-  footer a:hover{color:var(--ink)}
-
-  @media(max-width:760px){
-    .navlinks{display:none}
-    .hero{padding:64px 0 26px}
-    .games{grid-template-columns:1fr}
-    .game.featured{grid-template-columns:1fr}
-    .game.featured .cover{min-height:190px;border-right:none;border-bottom:1px solid var(--line)}
-    .about{grid-template-columns:1fr;gap:20px}
-    .cover{height:170px}
+  @media(max-width:860px){
+    .navlinks,.navcta{display:none}
+    .about-grid{grid-template-columns:1fr;gap:36px}
+    .about-r{border-left:0;padding-left:0}
+    .slide,.slide.on{grid-template-columns:1fr}
+    .slide .art{min-height:230px;border-right:0;border-bottom:1px solid var(--line)}
+    .slide .art::after{background:linear-gradient(180deg,transparent 55%,var(--panel))}
+    .slide .info{padding:30px 26px}
+    .arrow.prev{left:8px}.arrow.next{right:8px}
+    .foot-grid{grid-template-columns:1fr 1fr;gap:28px}
+    .news-in{justify-content:center;text-align:center}
   }
 </style>
 </head>
@@ -186,133 +203,195 @@
 
 <header>
   <nav class="wrap">
-    <a class="brand" href="#top"><span class="logo"></span>Voltari Studio</a>
+    <a class="brand" href="#top">
+      <img src="img/v-mark.png" alt="Voltari Studio">
+      <span class="bt">VOLTARI <b>STUDIO</b></span>
+    </a>
     <div class="navlinks">
-      <a href="#games">Games</a>
-      <a href="#studio">Studio</a>
-      <a href="mailto:voltari.studio@gmail.com">Contact</a>
+      <a href="#top" class="on">Home</a>
+      <a href="#about">About Us</a>
+      <a href="#games">Our Games</a>
+      <a href="#contact">Contact</a>
     </div>
+    <a class="btn btn-ghost navcta" href="https://store.steampowered.com/app/4920330/Lane_Wars/" target="_blank" rel="noopener">Join the Adventure</a>
   </nav>
 </header>
 
 <main id="top">
-  <section class="hero wrap">
-    <span class="eyebrow">Indie Game Studio</span>
-    <h1>Fast, replayable games<br>for PC &amp; mobile.</h1>
-    <p>Voltari Studio builds tight, satisfying games — from one-hand mobile runs to a full 3D PC arena. No fluff, just the fun part.</p>
-    <div class="meta">
-      <span class="pill"><b>3</b> games</span>
-      <span class="pill"><b>PC</b> · Steam</span>
-      <span class="pill"><b>Android</b> · Google Play</span>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="bg"></div>
+    <div class="inner">
+      <img class="vmark" src="img/v-mark.png" alt="">
+      <div class="vname">VOLTARI</div>
+      <div class="vsub"><span>STUDIO</span></div>
+      <p class="tag">We create epic worlds<br>and <b>unforgettable battles.</b></p>
+      <div class="orn"><span>◇</span></div>
+      <a class="btn btn-gold" href="#games">Explore Our Games <span class="ar">→</span></a>
     </div>
   </section>
 
-  <section class="sec wrap" id="games">
-    <div class="sec-h">
-      <h2>Our Games</h2>
-      <span>Three titles across PC &amp; mobile.</span>
-    </div>
-
-    <div class="games">
-
-      <!-- LANE WARS — flagship PC title (featured, full width) -->
-      <article class="game lw featured">
-        <div class="cover">
-          <span class="badge">PC · Steam</span>
-          <span class="emoji e2">🏰</span>
-          <span class="emoji">⚔️</span>
-          <span class="wm">LANE&nbsp;WARS</span>
-        </div>
-        <div class="body">
-          <h3>Lane Wars</h3>
-          <div class="role">Lane strategy auto-battler · PC / Steam</div>
-          <p>Command your legion in a dark-fantasy lane auto-battler. Raise free-producing barracks, summon 10 unique heroes, gear them up, and smash the enemy base across two lanes. Pure strategy — no unit micro. Outwit the AI.</p>
-          <div class="chips">
-            <span class="chip">🏰 Two lanes, one goal</span>
-            <span class="chip">🦸 10 unique heroes</span>
-            <span class="chip">💎 24 items · 4 tiers</span>
-            <span class="chip">🔥 Mega creeps</span>
-            <span class="chip">🤖 Human-like AI · 4 levels</span>
-            <span class="chip">🖥️ PC / Steam</span>
-            <span class="chip">🎁 Free to play</span>
-          </div>
-          <!-- When the Steam page is public, swap this for a "Wishlist on Steam" .cta link -->
-          <span class="cta soon lw-soon">Coming soon on Steam</span>
-          <div class="soon-note">Store page in review — a free Playtest is on the way.</div>
-        </div>
-      </article>
-
-      <!-- BLADE & BANNER -->
-      <article class="game bb">
-        <div class="cover">
-          <span class="badge">New</span>
-          <span class="emoji">⚔️</span>
-          <span class="wm">Blade&nbsp;&amp;&nbsp;Banner</span>
-        </div>
-        <div class="body">
-          <h3>Blade &amp; Banner</h3>
-          <div class="role">Auto-battle roguelite · Fantasy</div>
-          <p>Command a hero, raise a war party, and carve through relentless waves of fantasy foes. Loot, forge, and grow stronger with every run.</p>
-          <div class="chips">
-            <span class="chip">⚔️ Auto-battle</span>
-            <span class="chip">🛡️ 5 hero classes</span>
-            <span class="chip">🤝 War party allies</span>
-            <span class="chip">💎 Loot &amp; forge</span>
-            <span class="chip">🌑 Campaign + Endless</span>
-            <span class="chip">📴 Play offline</span>
-            <span class="chip">🌍 EN / TR</span>
-          </div>
-          <!-- When Blade & Banner is live on Play, swap this block for the .cta.play link below -->
-          <span class="cta soon">Coming soon to Google Play</span>
-          <div class="soon-note">Now in testing — launching on Android shortly.</div>
-        </div>
-      </article>
-
-      <!-- NEONAUT -->
-      <article class="game nn">
-        <div class="cover">
-          <span class="badge">Live</span>
-          <span class="emoji">🚀</span>
-          <span class="wm">NEONAUT</span>
-        </div>
-        <div class="body">
-          <h3>Neonaut</h3>
-          <div class="role">Arcade dodger · Neon space</div>
-          <p>A neon-soaked space arcade dodger. Pilot through endless asteroid fields, survive as long as you can, and climb the global leaderboard.</p>
-          <div class="chips">
-            <span class="chip">✨ Endless arcade action</span>
-            <span class="chip">🚀 6 unlockable ships</span>
-            <span class="chip">🏆 Global leaderboards</span>
-            <span class="chip">🎮 Tilt &amp; touch controls</span>
-          </div>
-          <a class="cta play" href="https://play.google.com/store/apps/details?id=com.voltari.neonaut" target="_blank" rel="noopener">Get it on Google Play <span class="arrow">→</span></a>
-        </div>
-      </article>
-
-    </div>
-
-    <!-- studio strip -->
-    <div class="about" id="studio">
-      <div>
-        <h3>About Voltari Studio</h3>
-        <p>We're a small independent studio with a simple goal: make games that respect your time and pull you back for one more run — whether that's a quick mobile session or a full PC battle. Every title is built to be quick to learn and hard to put down.</p>
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap about-grid">
+      <div class="about-l">
+        <span class="eyebrow">About Us</span>
+        <h2>Passion. Creativity.<br>Great Games.</h2>
+        <p>Voltari Studio is an independent game development studio focused on creating immersive, strategic and competitive games with deep mechanics and unforgettable experiences.</p>
+        <a class="btn btn-ghost" href="#games">Learn More About Us <span class="ar">→</span></a>
       </div>
-      <div class="values">
-        <div class="value"><span class="ic">⚡</span><span><b>Pick-up-and-play</b>Easy to learn, made for satisfying sessions.</span></div>
-        <div class="value"><span class="ic">🔁</span><span><b>Built to replay</b>Runs, unlocks, and just-one-more hooks.</span></div>
-        <div class="value"><span class="ic">🎮</span><span><b>Mobile &amp; PC</b>From Android to Steam — lightweight and player-first.</span></div>
+      <div class="about-r">
+        <div class="stat">
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 3l7 7M21 3l-7 7M6 21l6-6 6 6M10 10l4 4"/><path d="M4 4l3 0 0 3M20 4l-3 0 0 3"/></svg></div>
+          <div class="lb">Passionate Developers</div>
+          <div class="nm">10+</div>
+        </div>
+        <div class="stat">
+          <div class="ic"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="10" rx="5"/><path d="M7 12h4M9 10v4M16 11h.01M18 13h.01"/></svg></div>
+          <div class="lb">Games in Development</div>
+          <div class="nm">2</div>
+        </div>
+        <div class="stat">
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M7 4h10v5a5 5 0 01-10 0zM7 6H4v2a3 3 0 003 3M17 6h3v2a3 3 0 01-3 3M9 20h6M12 14v6"/></svg></div>
+          <div class="lb">Player Focused</div>
+          <div class="nm">100%</div>
+        </div>
       </div>
     </div>
   </section>
+
+  <!-- GAMES -->
+  <section id="games" class="games">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Our Games</span>
+        <h2>Epic Battles Await</h2>
+        <div class="orn"><span>◇</span></div>
+      </div>
+      <div class="carousel">
+        <button class="arrow prev" id="cPrev" aria-label="Previous">‹</button>
+        <button class="arrow next" id="cNext" aria-label="Next">›</button>
+        <div class="track" id="cTrack">
+
+          <article class="slide on">
+            <div class="art"><img src="img/lanewars.jpg" alt="Lane Wars"></div>
+            <div class="info">
+              <span class="gbadge">Free to Play</span>
+              <h3>Lane Wars</h3>
+              <div class="genre">Auto Battler &nbsp;|&nbsp; Strategy</div>
+              <p>Build, summon and strategize. Two lanes, epic heroes, powerful items and massive creeps. Destroy the enemy base!</p>
+              <a class="btn btn-gold" href="https://store.steampowered.com/app/4920330/Lane_Wars/" target="_blank" rel="noopener">View Game <span class="ar">→</span></a>
+            </div>
+          </article>
+
+          <article class="slide">
+            <div class="art"><img src="img/neonaut.webp" alt="Neonaut"></div>
+            <div class="info">
+              <span class="gbadge">Out Now</span>
+              <h3>Neonaut</h3>
+              <div class="genre">Arcade &nbsp;|&nbsp; Space Dodger</div>
+              <p>A neon-soaked space arcade dodger. Weave through endless asteroid fields, unlock ships and climb the global leaderboard.</p>
+              <a class="btn btn-gold" href="https://play.google.com/store/apps/details?id=com.voltari.neonaut" target="_blank" rel="noopener">Get it on Google Play <span class="ar">→</span></a>
+            </div>
+          </article>
+
+          <article class="slide">
+            <div class="art"><img src="img/bladebanner.webp" alt="Blade & Banner"></div>
+            <div class="info">
+              <span class="gbadge">Coming Soon</span>
+              <h3>Blade &amp; Banner</h3>
+              <div class="genre">Auto-Battle Roguelite &nbsp;|&nbsp; Fantasy</div>
+              <p>Command a hero, raise a war party and carve through relentless waves of foes. Loot, forge and grow stronger with every run.</p>
+              <span class="btn btn-ghost dis">Coming Soon</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+      <div class="dots" id="cDots"></div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <div class="news" id="contact">
+    <div class="wrap news-in">
+      <div class="news-l">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M18 8a6 6 0 00-12 0c0 7-3 9-3 9h18s-3-2-3-9M13.7 21a2 2 0 01-3.4 0"/></svg></div>
+        <p>Be the first to know about updates, new games and exclusive content.</p>
+      </div>
+      <form class="news-form" id="newsForm">
+        <input type="email" id="newsEmail" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+
 </main>
 
 <footer>
-  <a class="brand" href="#top"><span class="logo"></span>Voltari Studio</a>
-  <p>
-    © 2026 Voltari Studio · Independent game studio<br>
-    <a href="mailto:voltari.studio@gmail.com">voltari.studio@gmail.com</a>
-  </p>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="img/v-mark.png" alt="Voltari Studio">
+        <div class="bt">VOLTARI <b>STUDIO</b></div>
+      </div>
+      <div class="foot-col">
+        <h4>Navigation</h4>
+        <a href="#top">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#games">Our Games</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="foot-col">
+        <h4>Follow Us</h4>
+        <div class="socials">
+          <a href="#" aria-label="Discord" title="Discord"><svg viewBox="0 0 24 24"><path d="M20 6a19 19 0 00-4.7-1.5l-.2.5A17 17 0 0119 6.9 16 16 0 005 6.9a17 17 0 013.9-1.9l-.2-.5A19 19 0 004 6C1.6 9.6 1 13.1 1.2 16.6A19 19 0 007 19.5l.4-.6a12 12 0 01-1.9-.9l.5-.4a13 13 0 0011.8 0l.5.4c-.6.4-1.2.7-1.9.9l.4.6a19 19 0 005.8-2.9C23 12.6 22.1 9.1 20 6zM8.7 14.7c-.9 0-1.7-.9-1.7-2s.8-2 1.7-2 1.7.9 1.7 2-.8 2-1.7 2zm6.6 0c-.9 0-1.7-.9-1.7-2s.8-2 1.7-2 1.7.9 1.7 2-.8 2-1.7 2z"/></svg></a>
+          <a href="#" aria-label="X" title="X"><svg viewBox="0 0 24 24"><path d="M18.9 2H22l-7.3 8.3L23 22h-6.8l-5.3-6.9L4.8 22H1.7l7.8-8.9L1 2h7l4.8 6.3zM17.7 20h1.7L7.4 4H5.5z"/></svg></a>
+          <a href="#" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24"><path d="M23 7.5a3 3 0 00-2.1-2.1C19 5 12 5 12 5s-7 0-8.9.4A3 3 0 001 7.5 31 31 0 00.6 12 31 31 0 001 16.5a3 3 0 002.1 2.1C5 19 12 19 12 19s7 0 8.9-.4a3 3 0 002.1-2.1A31 31 0 0023.4 12 31 31 0 0023 7.5zM9.8 15.3V8.7l5.7 3.3z"/></svg></a>
+          <a href="mailto:voltari.studio@gmail.com" aria-label="Email" title="Email"><svg viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 011 1v12a1 1 0 01-1 1H3a1 1 0 01-1-1V6a1 1 0 011-1zm0 2v.4l9 5.6 9-5.6V7H3zm18 2.7l-8.5 5.3a1 1 0 01-1 0L3 9.7V17h18z"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <a href="mailto:voltari.studio@gmail.com">voltari.studio@gmail.com</a>
+        <p style="color:var(--faint);margin-top:14px">© 2026 Voltari Studio.<br>All rights reserved.</p>
+      </div>
+    </div>
+    <div class="copy">Crafted with passion in the realm of Voltari.</div>
+  </div>
 </footer>
 
+<script>
+  // Games carousel
+  (function(){
+    const slides=[...document.querySelectorAll('#cTrack .slide')];
+    const dotsWrap=document.getElementById('cDots');
+    let i=0;
+    slides.forEach((_,j)=>{const d=document.createElement('span');d.className='dot'+(j===0?' on':'');
+      d.onclick=()=>go(j);dotsWrap.appendChild(d);});
+    const dots=[...dotsWrap.children];
+    function go(n){i=(n+slides.length)%slides.length;
+      slides.forEach((s,j)=>s.classList.toggle('on',j===i));
+      dots.forEach((d,j)=>d.classList.toggle('on',j===i));}
+    document.getElementById('cPrev').onclick=()=>go(i-1);
+    document.getElementById('cNext').onclick=()=>go(i+1);
+  })();
+  // Newsletter -> opens email to studio (no backend yet)
+  document.getElementById('newsForm').addEventListener('submit',function(e){
+    e.preventDefault();
+    const em=document.getElementById('newsEmail').value.trim();
+    if(!em)return;
+    window.location.href='mailto:voltari.studio@gmail.com?subject=Newsletter%20signup&body='+
+      encodeURIComponent('Please add me to the Voltari Studio newsletter: '+em);
+  });
+  // Nav active-state on scroll
+  const secs=[...document.querySelectorAll('#top,#about,#games,#contact')];
+  const links=[...document.querySelectorAll('.navlinks a')];
+  addEventListener('scroll',()=>{
+    let cur='top';for(const s of secs){if(scrollY>=s.offsetTop-120)cur=s.id;}
+    links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+cur));
+  },{passive:true});
+</script>
 </body>
 </html>
