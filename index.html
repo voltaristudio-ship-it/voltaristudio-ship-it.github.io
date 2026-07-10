@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Voltari Studio — Epic Games</title>
-<meta name="description" content="Voltari Studio is an independent game studio crafting immersive, strategic games with deep mechanics. Makers of Lane Wars, Neonaut and Blade & Banner.">
+<meta name="description" content="Voltari Studio is an independent game studio crafting strategic, competitive games with deep mechanics. Makers of Lane Wars, Neonaut and Blade & Banner.">
 <meta property="og:title" content="Voltari Studio — Epic Games">
 <meta property="og:description" content="We create epic worlds and unforgettable battles. Makers of Lane Wars, Neonaut and Blade & Banner.">
 <meta property="og:type" content="website">
@@ -36,7 +36,6 @@
   h1,h2,h3,.serif{font-family:"Cormorant Garamond",Georgia,serif}
   .cinzel{font-family:"Cinzel",serif}
 
-  /* ornaments + eyebrows */
   .eyebrow{font-family:"Cinzel",serif;font-size:12px;letter-spacing:.42em;text-transform:uppercase;
     color:var(--gold);font-weight:600}
   .orn{display:flex;align-items:center;justify-content:center;gap:14px;margin:16px 0}
@@ -45,7 +44,6 @@
   .orn::after{background:linear-gradient(90deg,var(--gold-dk),transparent)}
   .orn span{color:var(--gold);font-size:12px;transform:rotate(45deg);opacity:.9}
 
-  /* buttons */
   .btn{display:inline-flex;align-items:center;gap:10px;font-family:"Cinzel",serif;font-weight:600;
     font-size:13px;letter-spacing:.12em;text-transform:uppercase;padding:14px 26px;border-radius:4px;
     cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s,color .2s;border:1px solid transparent}
@@ -62,35 +60,37 @@
   /* header */
   header{position:sticky;top:0;z-index:40;background:rgba(9,9,12,.78);backdrop-filter:blur(14px);
     border-bottom:1px solid var(--line)}
-  nav{display:flex;align-items:center;justify-content:space-between;height:74px;gap:20px}
+  nav{display:flex;align-items:center;justify-content:space-between;height:74px;gap:18px}
   .brand{display:flex;align-items:center;gap:12px}
   .brand img{height:34px;width:auto;filter:drop-shadow(0 2px 6px rgba(226,181,82,.35))}
   .brand .bt{font-family:"Cinzel",serif;font-weight:700;font-size:16px;letter-spacing:.22em;color:var(--ink)}
   .brand .bt b{color:var(--gold);font-weight:700}
-  .navlinks{display:flex;gap:32px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;
-    font-weight:500;color:var(--dim)}
+  .navlinks{display:flex;gap:30px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;
+    font-weight:500;color:var(--dim);margin-left:auto}
   .navlinks a{position:relative;padding:4px 0;transition:color .2s}
   .navlinks a:hover,.navlinks a.on{color:var(--gold)}
   .navlinks a.on::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;
     background:linear-gradient(90deg,var(--gold),transparent)}
+  .right{display:flex;align-items:center;gap:16px}
+  .lang{display:flex;align-items:center;gap:6px;font-family:"Cinzel",serif;font-size:12px;letter-spacing:.1em}
+  .lang button{background:none;border:0;cursor:pointer;color:var(--faint);font:inherit;padding:2px 3px;transition:color .2s}
+  .lang button.on{color:var(--gold)}
+  .lang span{color:var(--faint);opacity:.5}
   .navcta{white-space:nowrap;padding:11px 20px;font-size:12px}
-  .burger{display:none}
 
   /* hero */
-  .hero{position:relative;min-height:640px;display:flex;align-items:center;justify-content:center;
+  .hero{position:relative;min-height:648px;display:flex;align-items:center;justify-content:center;
     text-align:center;overflow:hidden;border-bottom:1px solid var(--line)}
   .hero .bg{position:absolute;inset:0;background-image:url("img/hero.jpg");background-size:cover;
-    background-position:center 38%}
+    background-position:58% center}
   .hero::after{content:"";position:absolute;inset:0;
     background:
-      radial-gradient(58% 52% at 50% 50%, rgba(7,7,10,.58), transparent 72%),
-      radial-gradient(120% 92% at 50% 44%, transparent 40%, rgba(9,9,12,.5) 76%, rgba(9,9,12,.95) 100%),
-      linear-gradient(180deg, rgba(9,9,12,.42), rgba(9,9,12,.12) 38%, rgba(9,9,12,.88))}
+      radial-gradient(62% 58% at 50% 47%, rgba(6,6,9,.42), transparent 72%),
+      linear-gradient(180deg, rgba(9,9,12,.5), rgba(9,9,12,.06) 30%, rgba(9,9,12,.5) 70%, rgba(9,9,12,.96))}
   .hero .inner{position:relative;z-index:2;padding:72px 24px}
-  .hero .vmark{height:112px;width:auto;margin:0 auto 18px;
-    filter:drop-shadow(0 6px 26px rgba(226,181,82,.5))}
+  .hero .vmark{height:112px;width:auto;margin:0 auto 18px;filter:drop-shadow(0 6px 26px rgba(226,181,82,.5))}
   .hero .vname{font-family:"Cinzel",serif;font-weight:700;font-size:clamp(38px,7vw,68px);
-    letter-spacing:.14em;color:#fff;line-height:1;text-shadow:0 4px 30px rgba(0,0,0,.6)}
+    letter-spacing:.14em;color:#fff;line-height:1;text-shadow:0 4px 30px rgba(0,0,0,.7)}
   .hero .vsub{display:flex;align-items:center;justify-content:center;gap:16px;margin:12px 0 6px}
   .hero .vsub span{font-family:"Cinzel",serif;font-weight:600;font-size:clamp(15px,2.4vw,20px);
     letter-spacing:.55em;color:var(--gold);padding-left:.55em}
@@ -98,11 +98,9 @@
     background:linear-gradient(90deg,transparent,var(--gold))}
   .hero .vsub::after{background:linear-gradient(90deg,var(--gold),transparent)}
   .hero .tag{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:clamp(22px,3.6vw,32px);
-    color:#e9e4da;margin-top:16px}
+    color:#e9e4da;margin-top:16px;text-shadow:0 2px 20px rgba(0,0,0,.6)}
   .hero .tag b{color:var(--gold);font-weight:700}
-  .hero .btn{margin-top:8px}
 
-  /* section base */
   section{padding:88px 0}
   .sec-head{text-align:center;margin-bottom:52px}
   .sec-head h2{font-size:clamp(30px,5vw,46px);font-weight:600;margin-top:12px;color:var(--ink)}
@@ -110,18 +108,18 @@
   /* about */
   .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
   .about-l h2{font-size:clamp(30px,4.4vw,44px);font-weight:600;line-height:1.08;margin:14px 0 20px}
-  .about-l p{color:var(--dim);font-size:15.5px;max-width:440px;margin-bottom:26px}
+  .about-l p{color:var(--dim);font-size:15.5px;max-width:450px;margin-bottom:26px}
   .about-r{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;
     border-left:1px solid var(--line);padding-left:52px}
   .stat{text-align:center}
   .stat .ic{width:66px;height:66px;margin:0 auto 14px;border-radius:50%;display:flex;align-items:center;
     justify-content:center;border:1px solid var(--line);background:rgba(226,181,82,.05)}
   .stat .ic svg{width:30px;height:30px;stroke:var(--gold);fill:none;stroke-width:1.6}
-  .stat .lb{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);
+  .stat .lb{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--dim);
     line-height:1.4;font-weight:500;min-height:2.8em}
   .stat .nm{font-family:"Cormorant Garamond",serif;font-weight:700;font-size:38px;color:var(--gold);margin-top:6px}
 
-  /* games carousel */
+  /* games */
   .games{background:linear-gradient(180deg,transparent,rgba(226,181,82,.02),transparent)}
   .carousel{position:relative}
   .track{overflow:hidden;border:1px solid var(--line);border-radius:16px;background:var(--panel)}
@@ -130,20 +128,24 @@
   @keyframes fade{from{opacity:.3}to{opacity:1}}
   .slide .art{position:relative;min-height:400px;overflow:hidden;border-right:1px solid var(--line)}
   .slide .art img{width:100%;height:100%;object-fit:cover}
-  .slide .art::after{content:"";position:absolute;inset:0;
-    background:linear-gradient(90deg,transparent 60%,var(--panel))}
+  .slide .art::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 60%,var(--panel))}
   .slide .info{padding:44px 44px;display:flex;flex-direction:column;justify-content:center}
-  .gbadge{align-self:flex-start;font-family:"Cinzel",serif;font-size:10.5px;letter-spacing:.16em;
-    text-transform:uppercase;font-weight:600;color:var(--gold);border:1px solid var(--gold-dk);
-    background:rgba(226,181,82,.08);padding:5px 12px;border-radius:3px;margin-bottom:16px}
+  .badges{display:flex;align-items:center;gap:10px;margin-bottom:16px;flex-wrap:wrap}
+  .gbadge{font-family:"Cinzel",serif;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;
+    font-weight:600;color:var(--gold);border:1px solid var(--gold-dk);background:rgba(226,181,82,.08);
+    padding:5px 12px;border-radius:3px}
+  .gplat{display:inline-flex;align-items:center;gap:6px;font-size:10.5px;letter-spacing:.14em;
+    text-transform:uppercase;font-weight:600;color:var(--dim);border:1px solid var(--line2);
+    padding:5px 11px;border-radius:3px}
+  .gplat svg{width:13px;height:13px;stroke:var(--dim);fill:none;stroke-width:1.6}
   .slide .info h3{font-family:"Cormorant Garamond",serif;font-weight:700;font-size:40px;line-height:1;color:var(--ink)}
   .slide .genre{color:var(--gold);font-size:14px;letter-spacing:.03em;margin:8px 0 16px;
     border-bottom:1px solid var(--line);padding-bottom:16px}
-  .slide .info p{color:var(--dim);font-size:15px;margin-bottom:26px;max-width:420px}
+  .slide .info p{color:var(--dim);font-size:15px;margin-bottom:26px;max-width:430px}
   .arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:44px;height:44px;
     border-radius:50%;border:1px solid var(--line);background:rgba(9,9,12,.7);color:var(--gold);
     display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:18px;
-    transition:background .2s,border-color .2s,transform .2s}
+    transition:background .2s,border-color .2s}
   .arrow:hover{background:rgba(226,181,82,.12);border-color:var(--gold)}
   .arrow.prev{left:-22px}.arrow.next{right:-22px}
   .dots{display:flex;gap:10px;justify-content:center;margin-top:26px}
@@ -151,17 +153,15 @@
   .dot.on{background:var(--gold);box-shadow:0 0 10px rgba(226,181,82,.6)}
 
   /* newsletter */
-  .news{border-top:1px solid var(--line);border-bottom:1px solid var(--line);
-    background:var(--panel2);padding:40px 0}
+  .news{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--panel2);padding:40px 0}
   .news-in{display:flex;align-items:center;gap:26px;flex-wrap:wrap;justify-content:space-between}
   .news-l{display:flex;align-items:center;gap:16px}
   .news-l .ic{width:54px;height:54px;flex:0 0 auto;border-radius:50%;border:1px solid var(--line);
     background:rgba(226,181,82,.06);display:flex;align-items:center;justify-content:center}
   .news-l .ic svg{width:24px;height:24px;stroke:var(--gold);fill:none;stroke-width:1.6}
-  .news-l p{font-size:15px;color:var(--ink);max-width:340px}
-  .news-form{display:flex;gap:0;border:1px solid var(--line);border-radius:5px;overflow:hidden;background:#0a0a0d}
-  .news-form input{background:transparent;border:0;outline:0;color:var(--ink);padding:14px 18px;
-    font-size:14px;width:min(300px,60vw)}
+  .news-l p{font-size:15px;color:var(--ink);max-width:360px}
+  .news-form{display:flex;border:1px solid var(--line);border-radius:5px;overflow:hidden;background:#0a0a0d}
+  .news-form input{background:transparent;border:0;outline:0;color:var(--ink);padding:14px 18px;font-size:14px;width:min(300px,60vw)}
   .news-form input::placeholder{color:var(--faint)}
   .news-form button{border:0;cursor:pointer;font-family:"Cinzel",serif;font-weight:600;font-size:12px;
     letter-spacing:.12em;text-transform:uppercase;padding:0 24px;color:#241a06;
@@ -169,13 +169,11 @@
 
   /* footer */
   footer{padding:56px 0 40px}
-  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:36px;padding-bottom:34px;
-    border-bottom:1px solid var(--line2)}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:36px;padding-bottom:34px;border-bottom:1px solid var(--line2)}
   .foot-brand img{height:40px;margin-bottom:14px;filter:drop-shadow(0 2px 6px rgba(226,181,82,.35))}
   .foot-brand .bt{font-family:"Cinzel",serif;font-weight:700;letter-spacing:.2em;font-size:15px}
   .foot-brand .bt b{color:var(--gold)}
-  .foot-col h4{font-family:"Cinzel",serif;font-size:12px;letter-spacing:.16em;text-transform:uppercase;
-    color:var(--gold);margin-bottom:16px;font-weight:600}
+  .foot-col h4{font-family:"Cinzel",serif;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;font-weight:600}
   .foot-col a,.foot-col p{display:block;color:var(--dim);font-size:14px;margin-bottom:10px;transition:color .2s}
   .foot-col a:hover{color:var(--gold)}
   .socials{display:flex;gap:12px}
@@ -185,12 +183,13 @@
   .socials svg{width:17px;height:17px;fill:currentColor}
   .copy{text-align:center;color:var(--faint);font-size:13px;padding-top:26px;line-height:1.8}
 
-  @media(max-width:860px){
-    .navlinks,.navcta{display:none}
+  @media(max-width:900px){
+    .navlinks{display:none}
+    .navcta{display:none}
     .about-grid{grid-template-columns:1fr;gap:36px}
     .about-r{border-left:0;padding-left:0}
     .slide,.slide.on{grid-template-columns:1fr}
-    .slide .art{min-height:230px;border-right:0;border-bottom:1px solid var(--line)}
+    .slide .art{min-height:220px;border-right:0;border-bottom:1px solid var(--line)}
     .slide .art::after{background:linear-gradient(180deg,transparent 55%,var(--panel))}
     .slide .info{padding:30px 26px}
     .arrow.prev{left:8px}.arrow.next{right:8px}
@@ -208,65 +207,67 @@
       <span class="bt">VOLTARI <b>STUDIO</b></span>
     </a>
     <div class="navlinks">
-      <a href="#top" class="on">Home</a>
-      <a href="#about">About Us</a>
-      <a href="#games">Our Games</a>
-      <a href="#contact">Contact</a>
+      <a href="#top" class="on" data-i18n="nav.home">Home</a>
+      <a href="#about" data-i18n="nav.about">About Us</a>
+      <a href="#games" data-i18n="nav.games">Our Games</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
     </div>
-    <a class="btn btn-ghost navcta" href="https://store.steampowered.com/app/4920330/Lane_Wars/" target="_blank" rel="noopener">Join the Adventure</a>
+    <div class="right">
+      <div class="lang">
+        <button class="lang-btn" data-l="en">EN</button><span>/</span><button class="lang-btn" data-l="tr">TR</button>
+      </div>
+      <a class="btn btn-ghost navcta" href="https://store.steampowered.com/app/4920330/Lane_Wars/" target="_blank" rel="noopener" data-i18n="nav.cta">Join the Adventure</a>
+    </div>
   </nav>
 </header>
 
 <main id="top">
 
-  <!-- HERO -->
   <section class="hero">
     <div class="bg"></div>
     <div class="inner">
       <img class="vmark" src="img/v-mark.png" alt="">
       <div class="vname">VOLTARI</div>
       <div class="vsub"><span>STUDIO</span></div>
-      <p class="tag">We create epic worlds<br>and <b>unforgettable battles.</b></p>
+      <p class="tag" data-i18n="hero.tag">We create epic worlds<br>and <b>unforgettable battles.</b></p>
       <div class="orn"><span>◇</span></div>
-      <a class="btn btn-gold" href="#games">Explore Our Games <span class="ar">→</span></a>
+      <a class="btn btn-gold" href="#games"><span data-i18n="hero.cta">Explore Our Games</span> <span class="ar">→</span></a>
     </div>
   </section>
 
-  <!-- ABOUT -->
   <section id="about">
     <div class="wrap about-grid">
       <div class="about-l">
-        <span class="eyebrow">About Us</span>
-        <h2>Passion. Creativity.<br>Great Games.</h2>
-        <p>Voltari Studio is an independent game development studio focused on creating immersive, strategic and competitive games with deep mechanics and unforgettable experiences.</p>
-        <a class="btn btn-ghost" href="#games">Learn More About Us <span class="ar">→</span></a>
+        <span class="eyebrow" data-i18n="about.eyebrow">About Us</span>
+        <h2 data-i18n="about.title">Passion. Creativity.<br>Great Games.</h2>
+        <p data-i18n="about.body">Voltari Studio is an independent studio crafting strategic, competitive games with deep mechanics and unforgettable battles. Every title is built hands-on, with obsessive care for how it feels to play.</p>
+        <a class="btn btn-ghost" href="#games"><span data-i18n="about.cta">Learn More</span> <span class="ar">→</span></a>
       </div>
       <div class="about-r">
         <div class="stat">
-          <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 3l7 7M21 3l-7 7M6 21l6-6 6 6M10 10l4 4"/><path d="M4 4l3 0 0 3M20 4l-3 0 0 3"/></svg></div>
-          <div class="lb">Passionate Developers</div>
-          <div class="nm">10+</div>
+          <div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+          <div class="lb" data-i18n="stat1.label">Solo Developer</div>
+          <div class="nm">1</div>
         </div>
         <div class="stat">
           <div class="ic"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="10" rx="5"/><path d="M7 12h4M9 10v4M16 11h.01M18 13h.01"/></svg></div>
-          <div class="lb">Games in Development</div>
-          <div class="nm">2</div>
+          <div class="lb" data-i18n="stat2.label">Games Crafted</div>
+          <div class="nm">3</div>
         </div>
         <div class="stat">
           <div class="ic"><svg viewBox="0 0 24 24"><path d="M7 4h10v5a5 5 0 01-10 0zM7 6H4v2a3 3 0 003 3M17 6h3v2a3 3 0 01-3 3M9 20h6M12 14v6"/></svg></div>
-          <div class="lb">Player Focused</div>
-          <div class="nm">100%</div>
+          <div class="lb" data-i18n="stat3.label">Player Focused</div>
+          <div class="nm" data-i18n="stat3.num">100%</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- GAMES -->
   <section id="games" class="games">
     <div class="wrap">
       <div class="sec-head">
-        <span class="eyebrow">Our Games</span>
-        <h2>Epic Battles Await</h2>
+        <span class="eyebrow" data-i18n="games.eyebrow">Our Games</span>
+        <h2 data-i18n="games.title">Epic Battles Await</h2>
         <div class="orn"><span>◇</span></div>
       </div>
       <div class="carousel">
@@ -277,33 +278,42 @@
           <article class="slide on">
             <div class="art"><img src="img/lanewars.jpg" alt="Lane Wars"></div>
             <div class="info">
-              <span class="gbadge">Free to Play</span>
+              <div class="badges">
+                <span class="gbadge" data-i18n="lw.badge">Free to Play</span>
+                <span class="gplat"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="1"/><path d="M8 20h8M12 16v4"/></svg><span>PC</span></span>
+              </div>
               <h3>Lane Wars</h3>
-              <div class="genre">Auto Battler &nbsp;|&nbsp; Strategy</div>
-              <p>Build, summon and strategize. Two lanes, epic heroes, powerful items and massive creeps. Destroy the enemy base!</p>
-              <a class="btn btn-gold" href="https://store.steampowered.com/app/4920330/Lane_Wars/" target="_blank" rel="noopener">View Game <span class="ar">→</span></a>
+              <div class="genre" data-i18n="lw.genre">Auto Battler / MOBA / Strategy</div>
+              <p data-i18n="lw.desc">Build, summon and strategize. Two lanes, ten unique heroes, powerful items and massive creeps. Outwit the AI and destroy the enemy base.</p>
+              <a class="btn btn-gold" href="https://store.steampowered.com/app/4920330/Lane_Wars/" target="_blank" rel="noopener"><span data-i18n="lw.cta">View on Steam</span> <span class="ar">→</span></a>
             </div>
           </article>
 
           <article class="slide">
             <div class="art"><img src="img/neonaut.webp" alt="Neonaut"></div>
             <div class="info">
-              <span class="gbadge">Out Now</span>
+              <div class="badges">
+                <span class="gbadge" data-i18n="nn.badge">Out Now</span>
+                <span class="gplat"><svg viewBox="0 0 24 24"><rect x="7" y="3" width="10" height="18" rx="2"/><path d="M11 18h2"/></svg><span>Android</span></span>
+              </div>
               <h3>Neonaut</h3>
-              <div class="genre">Arcade &nbsp;|&nbsp; Space Dodger</div>
-              <p>A neon-soaked space arcade dodger. Weave through endless asteroid fields, unlock ships and climb the global leaderboard.</p>
-              <a class="btn btn-gold" href="https://play.google.com/store/apps/details?id=com.voltari.neonaut" target="_blank" rel="noopener">Get it on Google Play <span class="ar">→</span></a>
+              <div class="genre" data-i18n="nn.genre">Arcade / Space Dodger</div>
+              <p data-i18n="nn.desc">A neon-soaked space arcade dodger. Weave through endless asteroid fields, unlock ships and climb the global leaderboard.</p>
+              <a class="btn btn-gold" href="https://play.google.com/store/apps/details?id=com.voltari.neonaut" target="_blank" rel="noopener"><span data-i18n="nn.cta">Get it on Google Play</span> <span class="ar">→</span></a>
             </div>
           </article>
 
           <article class="slide">
             <div class="art"><img src="img/bladebanner.webp" alt="Blade & Banner"></div>
             <div class="info">
-              <span class="gbadge">Coming Soon</span>
+              <div class="badges">
+                <span class="gbadge" data-i18n="bb.badge">Coming Soon</span>
+                <span class="gplat"><svg viewBox="0 0 24 24"><rect x="7" y="3" width="10" height="18" rx="2"/><path d="M11 18h2"/></svg><span>Android</span></span>
+              </div>
               <h3>Blade &amp; Banner</h3>
-              <div class="genre">Auto-Battle Roguelite &nbsp;|&nbsp; Fantasy</div>
-              <p>Command a hero, raise a war party and carve through relentless waves of foes. Loot, forge and grow stronger with every run.</p>
-              <span class="btn btn-ghost dis">Coming Soon</span>
+              <div class="genre" data-i18n="bb.genre">Auto-Battle Roguelite / Fantasy</div>
+              <p data-i18n="bb.desc">Command a hero, raise a war party and carve through relentless waves of foes. Loot, forge and grow stronger with every run.</p>
+              <span class="btn btn-ghost dis" data-i18n="bb.cta">Coming Soon</span>
             </div>
           </article>
 
@@ -313,16 +323,15 @@
     </div>
   </section>
 
-  <!-- NEWSLETTER -->
   <div class="news" id="contact">
     <div class="wrap news-in">
       <div class="news-l">
         <div class="ic"><svg viewBox="0 0 24 24"><path d="M18 8a6 6 0 00-12 0c0 7-3 9-3 9h18s-3-2-3-9M13.7 21a2 2 0 01-3.4 0"/></svg></div>
-        <p>Be the first to know about updates, new games and exclusive content.</p>
+        <p data-i18n="news.text">Be the first to know about updates, new games and exclusive content.</p>
       </div>
       <form class="news-form" id="newsForm">
-        <input type="email" id="newsEmail" placeholder="Enter your email" required>
-        <button type="submit">Subscribe</button>
+        <input type="email" id="newsEmail" placeholder="Enter your email" data-i18n-ph="news.ph" required>
+        <button type="submit" data-i18n="news.btn">Subscribe</button>
       </form>
     </div>
   </div>
@@ -337,39 +346,88 @@
         <div class="bt">VOLTARI <b>STUDIO</b></div>
       </div>
       <div class="foot-col">
-        <h4>Navigation</h4>
-        <a href="#top">Home</a>
-        <a href="#about">About Us</a>
-        <a href="#games">Our Games</a>
-        <a href="#contact">Contact</a>
+        <h4 data-i18n="foot.nav">Navigation</h4>
+        <a href="#top" data-i18n="nav.home">Home</a>
+        <a href="#about" data-i18n="nav.about">About Us</a>
+        <a href="#games" data-i18n="nav.games">Our Games</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
       </div>
       <div class="foot-col">
-        <h4>Follow Us</h4>
+        <h4 data-i18n="foot.follow">Follow Us</h4>
         <div class="socials">
-          <a href="#" aria-label="Discord" title="Discord"><svg viewBox="0 0 24 24"><path d="M20 6a19 19 0 00-4.7-1.5l-.2.5A17 17 0 0119 6.9 16 16 0 005 6.9a17 17 0 013.9-1.9l-.2-.5A19 19 0 004 6C1.6 9.6 1 13.1 1.2 16.6A19 19 0 007 19.5l.4-.6a12 12 0 01-1.9-.9l.5-.4a13 13 0 0011.8 0l.5.4c-.6.4-1.2.7-1.9.9l.4.6a19 19 0 005.8-2.9C23 12.6 22.1 9.1 20 6zM8.7 14.7c-.9 0-1.7-.9-1.7-2s.8-2 1.7-2 1.7.9 1.7 2-.8 2-1.7 2zm6.6 0c-.9 0-1.7-.9-1.7-2s.8-2 1.7-2 1.7.9 1.7 2-.8 2-1.7 2z"/></svg></a>
           <a href="#" aria-label="X" title="X"><svg viewBox="0 0 24 24"><path d="M18.9 2H22l-7.3 8.3L23 22h-6.8l-5.3-6.9L4.8 22H1.7l7.8-8.9L1 2h7l4.8 6.3zM17.7 20h1.7L7.4 4H5.5z"/></svg></a>
-          <a href="#" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24"><path d="M23 7.5a3 3 0 00-2.1-2.1C19 5 12 5 12 5s-7 0-8.9.4A3 3 0 001 7.5 31 31 0 00.6 12 31 31 0 001 16.5a3 3 0 002.1 2.1C5 19 12 19 12 19s7 0 8.9-.4a3 3 0 002.1-2.1A31 31 0 0023.4 12 31 31 0 0023 7.5zM9.8 15.3V8.7l5.7 3.3z"/></svg></a>
           <a href="mailto:voltari.studio@gmail.com" aria-label="Email" title="Email"><svg viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 011 1v12a1 1 0 01-1 1H3a1 1 0 01-1-1V6a1 1 0 011-1zm0 2v.4l9 5.6 9-5.6V7H3zm18 2.7l-8.5 5.3a1 1 0 01-1 0L3 9.7V17h18z"/></svg></a>
         </div>
       </div>
       <div class="foot-col">
-        <h4>Contact</h4>
+        <h4 data-i18n="foot.contact">Contact</h4>
         <a href="mailto:voltari.studio@gmail.com">voltari.studio@gmail.com</a>
-        <p style="color:var(--faint);margin-top:14px">© 2026 Voltari Studio.<br>All rights reserved.</p>
+        <p style="color:var(--faint);margin-top:14px" data-i18n="foot.rights">© 2026 Voltari Studio.<br>All rights reserved.</p>
       </div>
     </div>
-    <div class="copy">Crafted with passion in the realm of Voltari.</div>
+    <div class="copy" data-i18n="foot.tagline">Crafted with passion in the realm of Voltari.</div>
   </div>
 </footer>
 
 <script>
-  // Games carousel
+  // ---- i18n ----
+  const I18N={
+    'nav.home':{en:'Home',tr:'Ana Sayfa'},
+    'nav.about':{en:'About Us',tr:'Hakkımızda'},
+    'nav.games':{en:'Our Games',tr:'Oyunlar'},
+    'nav.contact':{en:'Contact',tr:'İletişim'},
+    'nav.cta':{en:'Join the Adventure',tr:'Maceraya Katıl'},
+    'hero.tag':{en:'We create epic worlds<br>and <b>unforgettable battles.</b>',tr:'Epik dünyalar ve<br><b>unutulmaz savaşlar</b> yaratıyoruz.'},
+    'hero.cta':{en:'Explore Our Games',tr:'Oyunları Keşfet'},
+    'about.eyebrow':{en:'About Us',tr:'Hakkımızda'},
+    'about.title':{en:'Passion. Creativity.<br>Great Games.',tr:'Tutku. Yaratıcılık.<br>Harika Oyunlar.'},
+    'about.body':{en:'Voltari Studio is an independent studio crafting strategic, competitive games with deep mechanics and unforgettable battles. Every title is built hands-on, with obsessive care for how it feels to play.',tr:'Voltari Studio; derin mekaniklere ve unutulmaz savaşlara sahip stratejik, rekabetçi oyunlar üreten bağımsız bir stüdyodur. Her oyun, oynanış hissine takıntılı bir özenle elle işlenir.'},
+    'about.cta':{en:'Learn More',tr:'Daha Fazla'},
+    'stat1.label':{en:'Solo Developer',tr:'Bağımsız Geliştirici'},
+    'stat2.label':{en:'Games Crafted',tr:'Üretilen Oyun'},
+    'stat3.label':{en:'Player Focused',tr:'Oyuncu Odaklı'},
+    'stat3.num':{en:'100%',tr:'%100'},
+    'games.eyebrow':{en:'Our Games',tr:'Oyunlarımız'},
+    'games.title':{en:'Epic Battles Await',tr:'Epik Savaşlar Sizi Bekliyor'},
+    'lw.badge':{en:'Free to Play',tr:'Ücretsiz'},
+    'lw.genre':{en:'Auto Battler / MOBA / Strategy',tr:'Auto Battler / MOBA / Strateji'},
+    'lw.desc':{en:'Build, summon and strategize. Two lanes, ten unique heroes, powerful items and massive creeps. Outwit the AI and destroy the enemy base.',tr:'Kur, çağır ve strateji yap. İki koridor, on benzersiz kahraman, güçlü eşyalar ve devasa creep\'ler. Yapay zekâyı alt et, düşman üssünü yık.'},
+    'lw.cta':{en:'View on Steam',tr:'Steam\'de Gör'},
+    'nn.badge':{en:'Out Now',tr:'Yayında'},
+    'nn.genre':{en:'Arcade / Space Dodger',tr:'Arcade / Uzay'},
+    'nn.desc':{en:'A neon-soaked space arcade dodger. Weave through endless asteroid fields, unlock ships and climb the global leaderboard.',tr:'Neon ışıklı bir uzay arcade oyunu. Sonsuz asteroit alanlarından geç, gemiler aç, küresel sıralamada yüksel.'},
+    'nn.cta':{en:'Get it on Google Play',tr:'Google Play\'den Al'},
+    'bb.badge':{en:'Coming Soon',tr:'Yakında'},
+    'bb.genre':{en:'Auto-Battle Roguelite / Fantasy',tr:'Auto-Battle Roguelite / Fantezi'},
+    'bb.desc':{en:'Command a hero, raise a war party and carve through relentless waves of foes. Loot, forge and grow stronger with every run.',tr:'Bir kahraman komuta et, savaş bölüğü kur, amansız düşman dalgalarını biç. Yağmala, güçlen, her turda ilerle.'},
+    'bb.cta':{en:'Coming Soon',tr:'Yakında'},
+    'news.text':{en:'Be the first to know about updates, new games and exclusive content.',tr:'Güncellemeler, yeni oyunlar ve özel içeriklerden ilk sen haberdar ol.'},
+    'news.ph':{en:'Enter your email',tr:'E-posta adresin'},
+    'news.btn':{en:'Subscribe',tr:'Abone Ol'},
+    'foot.nav':{en:'Navigation',tr:'Navigasyon'},
+    'foot.follow':{en:'Follow Us',tr:'Bizi Takip Et'},
+    'foot.contact':{en:'Contact',tr:'İletişim'},
+    'foot.rights':{en:'© 2026 Voltari Studio.<br>All rights reserved.',tr:'© 2026 Voltari Studio.<br>Tüm hakları saklıdır.'},
+    'foot.tagline':{en:'Crafted with passion in the realm of Voltari.',tr:'Voltari diyarında tutkuyla yaratıldı.'}
+  };
+  function applyLang(l){
+    document.documentElement.lang=l;
+    document.querySelectorAll('[data-i18n]').forEach(e=>{const k=e.getAttribute('data-i18n');if(I18N[k])e.innerHTML=I18N[k][l];});
+    document.querySelectorAll('[data-i18n-ph]').forEach(e=>{const k=e.getAttribute('data-i18n-ph');if(I18N[k])e.placeholder=I18N[k][l];});
+    document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('on',b.dataset.l===l));
+    try{localStorage.setItem('voltari_lang',l);}catch(_){}
+  }
+  let lang='en';
+  try{const s=localStorage.getItem('voltari_lang');
+    if(s){lang=s;}else if((navigator.language||'').toLowerCase().startsWith('tr')){lang='tr';}}catch(_){}
+  document.querySelectorAll('.lang-btn').forEach(b=>b.onclick=()=>applyLang(b.dataset.l));
+  applyLang(lang);
+
+  // ---- carousel ----
   (function(){
     const slides=[...document.querySelectorAll('#cTrack .slide')];
-    const dotsWrap=document.getElementById('cDots');
-    let i=0;
-    slides.forEach((_,j)=>{const d=document.createElement('span');d.className='dot'+(j===0?' on':'');
-      d.onclick=()=>go(j);dotsWrap.appendChild(d);});
+    const dotsWrap=document.getElementById('cDots');let i=0;
+    slides.forEach((_,j)=>{const d=document.createElement('span');d.className='dot'+(j===0?' on':'');d.onclick=()=>go(j);dotsWrap.appendChild(d);});
     const dots=[...dotsWrap.children];
     function go(n){i=(n+slides.length)%slides.length;
       slides.forEach((s,j)=>s.classList.toggle('on',j===i));
@@ -377,21 +435,18 @@
     document.getElementById('cPrev').onclick=()=>go(i-1);
     document.getElementById('cNext').onclick=()=>go(i+1);
   })();
-  // Newsletter -> opens email to studio (no backend yet)
+
+  // ---- newsletter -> email ----
   document.getElementById('newsForm').addEventListener('submit',function(e){
-    e.preventDefault();
-    const em=document.getElementById('newsEmail').value.trim();
-    if(!em)return;
-    window.location.href='mailto:voltari.studio@gmail.com?subject=Newsletter%20signup&body='+
-      encodeURIComponent('Please add me to the Voltari Studio newsletter: '+em);
+    e.preventDefault();const em=document.getElementById('newsEmail').value.trim();if(!em)return;
+    window.location.href='mailto:voltari.studio@gmail.com?subject=Newsletter&body='+encodeURIComponent('Please add me to the Voltari Studio newsletter: '+em);
   });
-  // Nav active-state on scroll
+
+  // ---- nav active on scroll ----
   const secs=[...document.querySelectorAll('#top,#about,#games,#contact')];
   const links=[...document.querySelectorAll('.navlinks a')];
-  addEventListener('scroll',()=>{
-    let cur='top';for(const s of secs){if(scrollY>=s.offsetTop-120)cur=s.id;}
-    links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+cur));
-  },{passive:true});
+  addEventListener('scroll',()=>{let cur='top';for(const s of secs){if(scrollY>=s.offsetTop-120)cur=s.id;}
+    links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+cur));},{passive:true});
 </script>
 </body>
 </html>
