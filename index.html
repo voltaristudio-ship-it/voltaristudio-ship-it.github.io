@@ -12,9 +12,9 @@
   gtag('config', 'G-42554J2Q9G');
 </script>
 <title>Voltari Studio — Epic Games</title>
-<meta name="description" content="Voltari Studio is an independent game studio crafting strategic, competitive games with deep mechanics. Makers of Lane Wars, Neonaut and Blade & Banner.">
+<meta name="description" content="Voltari Studio is an independent game studio crafting strategic, competitive games with deep mechanics. Makers of Lane Wars, Neonaut, Blade &amp; Banner and Mob Dynasty.">
 <meta property="og:title" content="Voltari Studio — Epic Games">
-<meta property="og:description" content="We create epic worlds and unforgettable battles. Makers of Lane Wars, Neonaut and Blade & Banner.">
+<meta property="og:description" content="We create epic worlds and unforgettable battles. Makers of Lane Wars, Neonaut, Blade &amp; Banner and Mob Dynasty.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="img/hero.jpg">
 <link rel="icon" href="img/v-mark.png">
@@ -136,6 +136,9 @@
   @keyframes fade{from{opacity:.3}to{opacity:1}}
   .slide .art{position:relative;min-height:400px;overflow:hidden;border-right:1px solid var(--line)}
   .slide .art img{width:100%;height:100%;object-fit:cover}
+  /* Wider-than-the-frame key art whose title sits on the left: anchor the crop
+     left so the logo survives instead of being cut in half by the centre crop. */
+  .slide .art img.anchor-l{object-position:left center}
   .slide .art::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 60%,var(--panel))}
   .slide .info{padding:44px 44px;display:flex;flex-direction:column;justify-content:center}
   .badges{display:flex;align-items:center;gap:10px;margin-bottom:16px;flex-wrap:wrap}
@@ -260,7 +263,7 @@
         <div class="stat">
           <div class="ic"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="10" rx="5"/><path d="M7 12h4M9 10v4M16 11h.01M18 13h.01"/></svg></div>
           <div class="lb" data-i18n="stat2.label">Games Crafted</div>
-          <div class="nm">3</div>
+          <div class="nm">4</div>
         </div>
         <div class="stat">
           <div class="ic"><svg viewBox="0 0 24 24"><path d="M7 4h10v5a5 5 0 01-10 0zM7 6H4v2a3 3 0 003 3M17 6h3v2a3 3 0 01-3 3M9 20h6M12 14v6"/></svg></div>
@@ -324,6 +327,21 @@
               <div class="genre" data-i18n="bb.genre">Auto-Battle Roguelite / Fantasy</div>
               <p data-i18n="bb.desc">Command a hero, raise a war party and carve through relentless waves of foes. Loot, forge and grow stronger with every run.</p>
               <a class="btn btn-gold" href="https://play.google.com/store/apps/details?id=com.bladebanner.game" target="_blank" rel="noopener"><span data-i18n="bb.cta">Get it on Google Play</span> <span class="ar">→</span></a>
+            </div>
+          </article>
+
+          <article class="slide">
+            <div class="art"><img class="anchor-l" src="img/mobdynasty.webp" alt="Mob Dynasty: Idle Empire"></div>
+            <div class="info">
+              <div class="badges">
+                <span class="gbadge" data-i18n="ftp.badge3">Free to Play</span>
+                <span class="gbadge" data-i18n="md.badge">Coming Soon</span>
+                <span class="gplat"><svg viewBox="0 0 24 24"><rect x="7" y="3" width="10" height="18" rx="2"/><path d="M11 18h2"/></svg><span>Android</span></span>
+              </div>
+              <h3>Mob Dynasty</h3>
+              <div class="genre" data-i18n="md.genre">Idle Mafia / Auto-Battler / Base Builder</div>
+              <p data-i18n="md.desc">Take over the family and take the city, one joint at a time. Build your villa, recruit crews, send your capos into automatic battles — and live with what comes back.</p>
+              <span class="btn btn-ghost dis" data-i18n="md.cta">Coming Soon</span>
             </div>
           </article>
 
@@ -413,6 +431,11 @@
     'bb.genre':{en:'Auto-Battle Roguelite / Fantasy',tr:'Auto-Battle Roguelite / Fantezi'},
     'bb.desc':{en:'Command a hero, raise a war party and carve through relentless waves of foes. Loot, forge and grow stronger with every run.',tr:'Bir kahraman komuta et, savaş bölüğü kur, amansız düşman dalgalarını biç. Yağmala, güçlen, her turda ilerle.'},
     'bb.cta':{en:'Get it on Google Play',tr:'Google Play\'den Al'},
+    'ftp.badge3':{en:'Free to Play',tr:'Ücretsiz'},
+    'md.badge':{en:'Coming Soon',tr:'Yakında'},
+    'md.genre':{en:'Idle Mafia / Auto-Battler / Base Builder',tr:'Idle Mafya / Auto-Battler / Üs Geliştirme'},
+    'md.desc':{en:'Take over the family and take the city, one joint at a time. Build your villa, recruit crews, send your capos into automatic battles — and live with what comes back.',tr:'Aileyi devral, şehri işletme işletme al. Villanı büyüt, adam devşir, capo\'larını otomatik savaşlara yolla — ve sonucuna katlan.'},
+    'md.cta':{en:'Coming Soon',tr:'Yakında'},
     'news.text':{en:'Be the first to know about updates, new games and exclusive content.',tr:'Güncellemeler, yeni oyunlar ve özel içeriklerden ilk sen haberdar ol.'},
     'news.ph':{en:'Enter your email',tr:'E-posta adresin'},
     'news.btn':{en:'Subscribe',tr:'Abone Ol'},
